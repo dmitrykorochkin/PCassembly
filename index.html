@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>title</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -50,7 +51,11 @@
               сигнатурным радар-детектором
             </h1>
             <div class="hero__advantages advantages">
-              <div class="advantages__item">
+              <div
+                data-aos-offset="200"
+                data-aos="fade-up"
+                class="advantages__item"
+              >
                 <img src="./img/hero/icons/icon1.svg" alt="icon1" />
                 <div class="advantages__info">
                   <div class="advantages__title">
@@ -61,7 +66,11 @@
                   </div>
                 </div>
               </div>
-              <div class="advantages__item">
+              <div
+                data-aos-offset="200"
+                data-aos="fade-up"
+                class="advantages__item"
+              >
                 <img
                   loading="lazy"
                   src="./img/hero/icons/icon2.svg"
@@ -74,7 +83,11 @@
                   </div>
                 </div>
               </div>
-              <div class="advantages__item">
+              <div
+                data-aos-offset="300"
+                data-aos="fade-up"
+                class="advantages__item"
+              >
                 <img src="./img/hero/icons/icon3.svg" alt="icon3" />
                 <div class="advantages__info">
                   <div class="advantages__title">Без ложных срабатываний</div>
@@ -83,7 +96,11 @@
                   </div>
                 </div>
               </div>
-              <div class="advantages__item">
+              <div
+                data-aos-offset="300"
+                data-aos="fade-up"
+                class="advantages__item"
+              >
                 <img
                   loading="lazy"
                   src="./img/hero/icons/icon4.svg"
@@ -162,7 +179,11 @@
         </div>
         <div class="device__items">
           <div class="device__items-left">
-            <div class="device__item">
+            <div
+              data-aos-duration="2000"
+              data-aos="fade-in"
+              class="device__item"
+            >
               <div class="device__number">1</div>
               <div class="device__img">
                 <img loading="lazy" src="./img/device/icon/icon1.svg" alt="" />
@@ -172,7 +193,11 @@
                 скорость, радаре и доп. видах контроля
               </div>
             </div>
-            <div class="device__item">
+            <div
+              data-aos-duration="2000"
+              data-aos="fade-in"
+              class="device__item"
+            >
               <div class="device__number">2</div>
               <div class="device__img">
                 <img loading="lazy" src="./img/device/icon/icon2.svg" alt="" />
@@ -182,7 +207,11 @@
                 дорожных радаров всех типов и диапазонов
               </div>
             </div>
-            <div class="device__item">
+            <div
+              data-aos-duration="2000"
+              data-aos="fade-in"
+              class="device__item"
+            >
               <div class="device__number">3</div>
               <div class="device__img">
                 <img loading="lazy" src="./img/device/icon/icon3.svg" alt="" />
@@ -194,7 +223,11 @@
             </div>
           </div>
           <div class="device__items-right">
-            <div class="device__item">
+            <div
+              data-aos-duration="2000"
+              data-aos="fade-in"
+              class="device__item"
+            >
               <div class="device__number">4</div>
               <div class="device__img">
                 <img loading="lazy" src="./img/device/icon/icon4.svg" alt="" />
@@ -204,7 +237,11 @@
                 местоположение и скорость для просмотра на ПК
               </div>
             </div>
-            <div class="device__item">
+            <div
+              data-aos-duration="2000"
+              data-aos="fade-in"
+              class="device__item"
+            >
               <div class="device__number">5</div>
               <div class="device__img">
                 <img loading="lazy" src="./img/device/icon/icon5.svg" alt="" />
@@ -293,7 +330,11 @@
           </div>
         </div>
         <div class="tech__items">
-          <div class="tech__item one">
+          <div
+            data-aos="fade-in"
+            data-aos-duration="1000"
+            class="tech__item one"
+          >
             <div class="tech__item-title">Сигнатурный модуль</div>
             <div class="tech__item-text">
               Моментально распознает “сигнатуры” уникальные импульсы полицейских
@@ -303,7 +344,11 @@
           </div>
 
           <div class="tech__item-right">
-            <div class="tech__item two">
+            <div
+              data-aos="fade-in"
+              data-aos-duration="1000"
+              class="tech__item two"
+            >
               <div class="tech__item-title">
                 Встроенная GPS <br />антенна в крепление
               </div>
@@ -311,7 +356,7 @@
                 Находит до 32 спутников за 1 минуту
               </div>
             </div>
-            <div class="tech__item">
+            <div data-aos="fade-in" data-aos-duration="1000" class="tech__item">
               <div class="tech__item-title">Радарный модуль</div>
               <div class="tech__item-text">
                 Понимает все типы радаров: Стрелка СТ/М, Крис, Арена, Визир,
@@ -320,7 +365,7 @@
             </div>
           </div>
         </div>
-        <div class="tech__img">
+        <div data-aos="fade-in" data-aos-duration="1000" class="tech__img">
           <picture>
             <source srcset="./img/tech/tech.webp" type="image/webp" />
             <source srcset="./img/tech/tech.png" type="image/png" />
@@ -329,16 +374,22 @@
         </div>
         <div class="tech__arrow">
           <img
+            data-aos="fade-in"
+            data-aos-duration="2000"
             class="tech__arrow-one"
             src="./img/tech/icons/line1.svg"
             alt="arrow"
           />
           <img
+            data-aos="fade-in"
+            data-aos-duration="2000"
             class="tech__arrow-two"
             src="./img/tech/icons/line2.svg"
             alt="arrow"
           />
           <img
+            data-aos="fade-in"
+            data-aos-duration="2000"
             class="tech__arrow-three"
             src="./img/tech/icons/line3.svg"
             alt="arrow"
@@ -674,6 +725,82 @@
                 <source srcset="./img/mode/car1.webp" type="image/webp" />
                 <source srcset="./img/mode/car1.png" type="image/png" />
                 <img
+                  data-aos="fade-up"
+                  class="tabs__block-car1"
+                  loading="lazy"
+                  src="./img/mode/car1.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/car2.webp" type="image/webp" />
+                <source srcset="./img/mode/car2.png" type="image/png" />
+                <img
+                  data-aos="fade-up"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  class="tabs__block-car2"
+                  loading="lazy"
+                  src="./img/mode/car2.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/road1.webp" type="image/webp" />
+                <source srcset="./img/mode/road1.png" type="image/png" />
+                <img
+                  class="tabs__block-road1"
+                  loading="lazy"
+                  src="./img/mode/road1.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/sign.webp" type="image/webp" />
+                <source srcset="./img/mode/sign.png" type="image/png" />
+                <img
+                  data-aos="fade-in"
+                  class="tabs__block-sign"
+                  loading="lazy"
+                  src="./img/mode/sign.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/name.webp" type="image/webp" />
+                <source srcset="./img/mode/name.png" type="image/png" />
+                <img
+                  data-aos="fade-in"
+                  data-aos-duration="1000"
+                  class="tabs__block-name"
+                  loading="lazy"
+                  src="./img/mode/name.png"
+                  alt="car"
+                />
+              </picture>
+            </div>
+            <div class="tabs__block-right">
+              <picture>
+                <source
+                  srcset="./img/mode/registrator1.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/mode/registrator1.png" type="image/png" />
+                <img
+                  class="tabs__block-navigator"
+                  loading="lazy"
+                  src="./img/mode/navigator.png"
+                  alt="car"
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="tabs__block tabs__block-none">
+            <div class="tabs__block-left">
+              <picture>
+                <source srcset="./img/mode/car1.webp" type="image/webp" />
+                <source srcset="./img/mode/car1.png" type="image/png" />
+                <img
                   class="tabs__block-car1"
                   loading="lazy"
                   src="./img/mode/car1.png"
@@ -723,7 +850,148 @@
             </div>
             <div class="tabs__block-right">
               <picture>
-                <source srcset="./img/mode/registrator1.webp" type="image/webp" />
+                <source
+                  srcset="./img/mode/registrator1.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/mode/registrator1.png" type="image/png" />
+                <img
+                  class="tabs__block-navigator"
+                  loading="lazy"
+                  src="./img/mode/navigator.png"
+                  alt="car"
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="tabs__block tabs__block-none">
+            <div class="tabs__block-left">
+              <picture>
+                <source srcset="./img/mode/car1.webp" type="image/webp" />
+                <source srcset="./img/mode/car1.png" type="image/png" />
+                <img
+                  class="tabs__block-car1"
+                  loading="lazy"
+                  src="./img/mode/car1.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/car2.webp" type="image/webp" />
+                <source srcset="./img/mode/car2.png" type="image/png" />
+                <img
+                  class="tabs__block-car2"
+                  loading="lazy"
+                  src="./img/mode/car2.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/road1.webp" type="image/webp" />
+                <source srcset="./img/mode/road1.png" type="image/png" />
+                <img
+                  class="tabs__block-road1"
+                  loading="lazy"
+                  src="./img/mode/road1.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/sign.webp" type="image/webp" />
+                <source srcset="./img/mode/sign.png" type="image/png" />
+                <img
+                  class="tabs__block-sign"
+                  loading="lazy"
+                  src="./img/mode/sign.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/name.webp" type="image/webp" />
+                <source srcset="./img/mode/name.png" type="image/png" />
+                <img
+                  class="tabs__block-name"
+                  loading="lazy"
+                  src="./img/mode/name.png"
+                  alt="car"
+                />
+              </picture>
+            </div>
+            <div class="tabs__block-right">
+              <picture>
+                <source
+                  srcset="./img/mode/registrator1.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/mode/registrator1.png" type="image/png" />
+                <img
+                  class="tabs__block-navigator"
+                  loading="lazy"
+                  src="./img/mode/navigator.png"
+                  alt="car"
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="tabs__block tabs__block-none">
+            <div class="tabs__block-left">
+              <picture>
+                <source srcset="./img/mode/car1.webp" type="image/webp" />
+                <source srcset="./img/mode/car1.png" type="image/png" />
+                <img
+                  class="tabs__block-car1"
+                  loading="lazy"
+                  src="./img/mode/car1.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/car2.webp" type="image/webp" />
+                <source srcset="./img/mode/car2.png" type="image/png" />
+                <img
+                  class="tabs__block-car2"
+                  loading="lazy"
+                  src="./img/mode/car2.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/road1.webp" type="image/webp" />
+                <source srcset="./img/mode/road1.png" type="image/png" />
+                <img
+                  class="tabs__block-road1"
+                  loading="lazy"
+                  src="./img/mode/road1.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/sign.webp" type="image/webp" />
+                <source srcset="./img/mode/sign.png" type="image/png" />
+                <img
+                  class="tabs__block-sign"
+                  loading="lazy"
+                  src="./img/mode/sign.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/name.webp" type="image/webp" />
+                <source srcset="./img/mode/name.png" type="image/png" />
+                <img
+                  class="tabs__block-name"
+                  loading="lazy"
+                  src="./img/mode/name.png"
+                  alt="car"
+                />
+              </picture>
+            </div>
+            <div class="tabs__block-right">
+              <picture>
+                <source
+                  srcset="./img/mode/registrator1.webp"
+                  type="image/webp"
+                />
                 <source srcset="./img/mode/registrator1.png" type="image/png" />
                 <img
                   class="tabs__block-navigator"
@@ -736,8 +1004,710 @@
           </div>
         </div>
       </section>
+      <!-- --------------------- notification -------------------------- -->
+      <section class="notification">
+        <div class="container">
+          <div class="notification__title">
+            Всегда актуальные данные в GPS-информаторе получайте заранее
+            уведомления о камерах ПДД
+          </div>
+          <div class="notification__info">
+            <div class="notification__info-text">
+              предупредит о стационарных <span>камерах и опасностях</span> на
+              дороге <span>за 500-1000 метров</span>
+            </div>
+            <div class="notification__info-block">
+              <img
+                class="notification__info-block--img"
+                src="./img/notification/wifi.svg"
+                alt=""
+              />
+              <p>Даже в зоне, где нет интернета и связи</p>
+            </div>
+          </div>
+          <div class="notification__items">
+            <div class="notification__item">
+              <img
+                class="notif__img1"
+                src="./img/notification/notif1.svg"
+                alt="notification"
+              />
+              <p>База камер <span>для 45 стран</span> ЕАЭС и Европы</p>
+            </div>
+            <div class="notification__item">
+              <img
+                class="notif__img2"
+                src="./img/notification/notif2.svg"
+                alt="notification"
+              />
+              <p><span>Нет ложных срабатываний</span>, все точки актуальны</p>
+            </div>
+            <div class="notification__item">
+              <img
+                class="notif__img3"
+                src="./img/notification/notif3.svg"
+                alt="notification"
+              />
+              <p><span>Еженедельное обновление</span> баз камер</p>
+            </div>
+            <div class="notification__item">
+              <img
+                class="notif__img4"
+                src="./img/notification/notif4.svg"
+                alt="notification"
+              />
+              <p>
+                В базу загружены <span>десятки тысяч поверенных камер</span> и
+                радаров
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="notif__bg">
+          <picture>
+            <source srcset="./img/notification/bg.webp" type="image/webp" />
+            <source srcset="./img/notification/bg.png" type="image/png" />
+            <img src="./img/notification/bg.png" alt="background" />
+          </picture>
+        </div>
+      </section>
+      <!-- ------------------ fines  -------------------------- -->
+      <section class="fines">
+        <div class="container">
+          <div class="fines__block">
+            <div class="fines__info">
+              <div class="fines__title">
+                Уверенная защита <span>от штрафов</span>
+              </div>
+              <div class="fines__text">
+                Заранее получайте информацию о точках контроля, определяемых по
+                GPS:
+              </div>
+            </div>
+            <div class="fines__icons">
+              <img class="fines__icon" src="./img/fines/icon1.svg" alt="icon" />
+              <img class="fines__icon" src="./img/fines/icon2.svg" alt="icon" />
+              <img class="fines__icon" src="./img/fines/icon3.svg" alt="icon" />
+              <img class="fines__icon" src="./img/fines/icon4.svg" alt="icon" />
+              <img class="fines__icon" src="./img/fines/icon5.svg" alt="icon" />
+              <img class="fines__icon" src="./img/fines/icon6.svg" alt="icon" />
+            </div>
+          </div>
+          <div class="fines__items-block">
+            <div class="fines__items">
+              <div class="fines__item">Полосы общественного транспорта</div>
+              <div class="fines__item">Проезд по обочине</div>
+            </div>
+            <div class="fines__items">
+              <div class="fines__item">Пешеходный переход</div>
+              <div class="fines__item">Пост ДПС и фото-засада</div>
+            </div>
+            <div class="fines__items">
+              <div class="fines__item">Камера «в спину»</div>
+              <div class="fines__item">Вафельная разметка и стоп-линия</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- -------------------- form ---------------------------------- -->
+      <section class="form container">
+        <div class="form__left">
+          <div class="form__title">
+            Сохраните <span>до 100 000₽</span> на штрафах <br />с
+            комбо-устройством
+          </div>
+          <div class="form__text">
+            Видеорегистратор, радар с корейской разработкой сигнатуры и
+            <span>GPS трекер</span>
+          </div>
+          <div class="form__click">
+            Закажите устройство с доставкой <span>в 1 клик</span>
+          </div>
+          <form>
+            <label for="name">
+              <div class="label__name">Ваше Фамилия и Имя*</div>
+              <input
+                type="text"
+                minlength="3"
+                maxlength="20"
+                name="user-name"
+                id="name"
+              />
+            </label>
+
+            <label for="telephone">
+              <div class="label__name">Ваш телефон*</div>
+              <input type="tel" id="telephone" placeholder=""
+            /></label>
+          </form>
+          <div class="form__footer">
+            <div class="form__button-text">
+              Нажимая на кнопку, вы даете согласие на обработку персональных
+              данных
+            </div>
+            <a href="#" target="_blank" class="button button__form">Заказать</a>
+          </div>
+        </div>
+
+        <div class="form__img">
+          <picture>
+            <source srcset="./img/form/form-bg.webp" type="image/webp" />
+            <source srcset="./img/form/form-bg.png" type="image/png" />
+            <img
+              class="form__img-bg"
+              src="./img/form/form-bg.png"
+              alt="background"
+            />
+          </picture>
+        </div>
+      </section>
+
+      <!-- -------------------------- alert------------------------------- -->
+      <section class="alert container">
+        <div class="alert__title">
+          Базы камер постоянно обновляются, поэтому видеорегистратор оповестит
+          Вас:
+        </div>
+        <div class="alert__items">
+          <div class="alert__item">
+            <img class="alert__item-img1" src="./img/alert/icon1.svg" alt="" />
+            <div class="alert__item-text">
+              О максимальной скорости, видеоблоке, мобильной камере
+            </div>
+          </div>
+          <div class="alert__item">
+            <img class="alert__item-img2" src="./img/alert/icon2.svg" alt="" />
+            <div class="alert__item-text">
+              О грузовом контроле, посте ДПС, движении по обочине и светофоре
+            </div>
+          </div>
+          <div class="alert__item">
+            <img class="alert__item-img3" src="./img/alert/icon3.svg" alt="" />
+            <div class="alert__item-text">
+              О парковке и остановке в зоне запрещающего знака
+            </div>
+          </div>
+          <div class="alert__item">
+            <img class="alert__item-img4" src="./img/alert/icon4.svg" alt="" />
+            <div class="alert__item-text">О мулежах камер на вашем пути</div>
+          </div>
+        </div>
+        <div class="alert__block">
+          <div class="alert__block-text">
+            <div class="alert__block-title">
+              Учитывает даже камеры средней скорости
+            </div>
+            <div class="alert__block-subtitle">
+              Оповестит о КСС, Автодория, Автоураган с мгновенной скоростью и
+              промежуточными камерами
+            </div>
+          </div>
+          <img
+            src="./img/alert/icon5.svg"
+            alt="icon"
+            class="alert__block-img"
+          />
+        </div>
+        <div class="alert__tabs">
+          <div class="alert__tab">
+            <img
+              src="./img/alert/icon6.svg"
+              alt="icon"
+              class="alert__tab-icon"
+            />
+            <div class="alert__tab-text text1">
+              Оповещение о мгновенной скорости, и заблаговременное оповещение о
+              начале КСС
+            </div>
+          </div>
+          <div class="alert__tab">
+            <img
+              src="./img/alert/icon7.svg"
+              alt="icon"
+              class="alert__tab-icon"
+            />
+            <div class="alert__tab-text text2">
+              Оповещение о въезде на участок КСС
+            </div>
+          </div>
+          <div class="alert__tab">
+            <img
+              src="./img/alert/icon8.svg"
+              alt="icon"
+              class="alert__tab-icon"
+            />
+            <div class="alert__tab-text text3">
+              Оповещение о промежуточной камере (камерах) на участке КСС
+            </div>
+          </div>
+          <div class="alert__tab">
+            <img
+              src="./img/alert/icon9.svg"
+              alt="icon"
+              class="alert__tab-icon"
+            />
+            <div class="alert__tab-text text4">
+              Оповещение мгновенной скорости, и заблаговременное оповещение об
+              окончании КСС
+            </div>
+          </div>
+        </div>
+        <div class="alert__animation">
+          <div class="alert__left">
+            <picture>
+              <source srcset="./img/alert/road.webp" type="image/webp" />
+              <source srcset="./img/alert/road.png" type="image/png" />
+              <img
+                class="alert__img-road"
+                loading="lazy"
+                src="./img/alert/road.png"
+                alt="background"
+              />
+            </picture>
+            <picture>
+              <source srcset="./img/alert/road-green.webp" type="image/webp" />
+              <source srcset="./img/alert/road-green.png" type="image/png" />
+              <img
+                class="alert__img-road-green"
+                loading="lazy"
+                src="./img/alert/road-green.png"
+                alt="background"
+              />
+            </picture>
+            <picture>
+              <source srcset="./img/alert/car.webp" type="image/webp" />
+              <source srcset="./img/alert/car.png" type="image/png" />
+              <img
+                class="alert__img-car"
+                loading="lazy"
+                src="./img/alert/car.png"
+                alt="background"
+              />
+            </picture>
+            <picture>
+              <source srcset="./img/alert/alert-sign.webp" type="image/webp" />
+              <source srcset="./img/alert/alert-sign.png" type="image/png" />
+              <img
+                class="alert__img-sign"
+                loading="lazy"
+                src="./img/alert/alert-sign.png"
+                alt="background"
+              />
+            </picture>
+            <picture>
+              <source srcset="./img/mode/sign.webp" type="image/webp" />
+              <source srcset="./img/mode/sign.png" type="image/png" />
+              <img
+                class="alert__img-sign2"
+                loading="lazy"
+                src="./img/mode/sign.png"
+                alt="car"
+              />
+            </picture>
+            <picture>
+              <source srcset="./img/alert/alert-name.webp" type="image/webp" />
+              <source srcset="./img/alert/alert-name.png" type="image/png" />
+              <img
+                class="alert__img-name"
+                loading="lazy"
+                src="./img/alert/alert-name.png"
+                alt="car"
+              />
+            </picture>
+          </div>
+          <div class="alert__right">
+            <picture>
+              <source srcset="./img/alert/alert-bg1.webp" type="image/webp" />
+              <source srcset="./img/alert/alert-bg1.png" type="image/png" />
+              <img
+                class="alert__bg"
+                loading="lazy"
+                src="./img/alert/alert-bg1.png"
+                alt="background"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <!-- ----------------------- cold start ---------------------- -->
+      <section class="coldstart container">
+        <div class="coldstart__title">
+          <img
+            class="coldstart__icon"
+            src="./img/coldstart/timer.svg"
+            alt="timer"
+          />
+          <span>Запуск за 1 минуту</span> при холодном старте
+        </div>
+        <div class="coldstart__text">
+          Спутники GPS, ГЛОНАСС, BAIDU находятся с рекордной скоростью
+        </div>
+        <div class="coldstart__items">
+          <div class="coldstart__item">
+            <div>
+              <picture>
+                <source
+                  srcset="./img/coldstart/coldstart.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/coldstart/coldstart.png"
+                  type="image/png"
+                />
+                <img
+                  class="coldstart__item-img"
+                  loading="lazy"
+                  src="./img/coldstart/coldstart.png"
+                  alt="background"
+                />
+              </picture>
+            </div>
+            <div class="coldstart__item-title">
+              Просматривайте пройденный маршрут на карте
+            </div>
+            <div class="coldstart__item-text">
+              Смотрите видео с GPS-треком на ПК. Координаты сохраняются на видео
+              в формате .TS
+            </div>
+          </div>
+          <div class="coldstart__item">
+            <div>
+              <picture>
+                <source
+                  srcset="./img/coldstart/coldstart2.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/coldstart/coldstart2.png"
+                  type="image/png"
+                />
+                <img
+                  class="coldstart__item-img"
+                  loading="lazy"
+                  src="./img/coldstart/coldstart2.png"
+                  alt="background"
+                />
+              </picture>
+            </div>
+            <div class="coldstart__item-title">Проверка перед поездкой</div>
+            <div class="coldstart__item-text">
+              Проверьте, как происходят оповещения после настройки в демо
+              режиме. Проверьте статус спутинков
+            </div>
+          </div>
+        </div>
+        <div class="coldstart__footer">
+          <div class="coldstart__footer-text">
+            На видео отображается штамп<br />
+            <span>с необходимой с информацией для суда:</span>
+          </div>
+          <div class="coldstart__info">
+            <div class="info__time info__wrap">
+              <img class="info__img1" src="./img/coldstart/clock.svg" alt="" />
+              <div class="info__block">
+                <div class="info__text">Время</div>
+                <div class="info__data">12:56</div>
+              </div>
+            </div>
+            <div class="info__speed info__wrap">
+              <img class="info__img2" src="./img/coldstart/speed.svg" alt="" />
+              <div class="info__block">
+                <div class="info__text">Скорость</div>
+                <div class="info__data">123 км/ч</div>
+              </div>
+            </div>
+            <div class="info__gps info__wrap">
+              <img class="info__img3" src="./img/coldstart/gps.svg" alt="" />
+              <div class="info__block">
+                <div class="info__text">Координаты GPS</div>
+                <div class="info__data">51.4535N - 45.3456W</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ------------------- radar---------------------------- -->
+
+      <section class="radar container">
+        <div class="radar__title">
+          Радар-детектор понятно и быстро оповестит о камерах
+        </div>
+        <div class="radar__items">
+          <div class="radar__item">
+            <div>
+              <picture>
+                <source srcset="./img/radar/radar1.webp" type="image/webp" />
+                <source srcset="./img/radar/radar1.png" type="image/png" />
+                <img
+                  class="radar__img"
+                  loading="lazy"
+                  src="./img/radar/radar1.png"
+                  alt="radar"
+                />
+              </picture>
+            </div>
+            <div class="radar__item-text">
+              <span>Звук и изображение</span> типа контроля на дисплее
+            </div>
+          </div>
+          <div class="radar__item">
+            <div>
+              <picture>
+                <source srcset="./img/radar/radar2.webp" type="image/webp" />
+                <source srcset="./img/radar/radar2.png" type="image/png" />
+                <img
+                  class="radar__img"
+                  loading="lazy"
+                  src="./img/radar/radar2.png"
+                  alt="radar"
+                />
+              </picture>
+            </div>
+            <div class="radar__item-text">
+              <span>Только изображение</span> типа контроля на дисплее
+            </div>
+          </div>
+          <div class="radar__item">
+            <div>
+              <picture>
+                <source srcset="./img/radar/radar3.webp" type="image/webp" />
+                <source srcset="./img/radar/radar3.png" type="image/png" />
+                <img
+                  class="radar__img"
+                  loading="lazy"
+                  src="./img/radar/radar3.png"
+                  alt="radar"
+                />
+              </picture>
+            </div>
+            <div class="radar__item-text">
+              <span>Только звук</span> для предупреждения о типе контроля
+            </div>
+          </div>
+        </div>
+
+        <div class="radar__footer">
+          <div class="radar__setting">
+            <div class="radar__setting-title">
+              Настройте только важные оповещения
+            </div>
+            <div class="radar__setting-text">
+              Включайте и отключайте оповещения о камерах отдельно для каждого
+              типа фотофиксации: посты ДПС, Автодория, муляж камеры и тд
+            </div>
+          </div>
+          <div class="radar__option">
+            <img
+              class="radar__option-icon"
+              src="./img/radar/icon1.svg"
+              alt=""
+            />
+            <div class="radar__option-text">
+              <span>Отключите уведомления</span> для камер без штрафов в
+              интерфейсе <span>в 1 клик</span>
+            </div>
+          </div>
+          <div class="radar__option">
+            <img
+              class="radar__option-icon"
+              src="./img/radar/icon2.svg"
+              alt=""
+            />
+            <div class="radar__option-text">
+              <span>Отключите уведомления</span> для камер без штрафов в
+              интерфейсе <span>в 1 клик</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------  interface -------------------------- -->
+      <section class="interface container">
+        <div class="interface__title">
+          Интерфейс покажет информацию <br />
+          о точке контроля
+        </div>
+        <div class="interface__wrap">
+          <div class="interface__block">
+            <div class="interface__item">
+              <img
+                src="./img/interface/icon1.svg"
+                alt=""
+                class="interface__icon1"
+              />
+              <div class="interface__text">
+                Работа радара , диапазон излучения
+              </div>
+            </div>
+            <div class="interface__item">
+              <img
+                src="./img/interface/icon2.svg"
+                alt=""
+                class="interface__icon2"
+              />
+              <div class="interface__text">
+                Ограничение скорости и расстояние до камеры
+              </div>
+            </div>
+            <div class="interface__item">
+              <img
+                src="./img/interface/icon3.svg"
+                alt=""
+                class="interface__icon3"
+              />
+              <div class="interface__text">
+                Текущая скорость или средняя скорость
+              </div>
+            </div>
+            <div class="interface__item">
+              <img
+                src="./img/interface/icon4.svg"
+                alt=""
+                class="interface__icon4"
+              />
+              <div class="interface__text">Дополнительные типы контроля</div>
+            </div>
+          </div>
+          <div class="interface__img">
+            <picture>
+              <source
+                srcset="./img/interface/intreface-bg.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="./img/interface/intreface-bg.png"
+                type="image/png"
+              />
+              <img
+                class="interface__img-bg"
+                loading="lazy"
+                src="./img/interface/intreface-bg.png"
+                alt="radar"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <!-- ---------------------- screen ------------------------------- -->
+
+      <section class="screen container">
+        <div class="screen__title">Яркий и четкий экран для полного обзора</div>
+        <div class="screen__items">
+          <div class="screen__item">
+            <div class="screen__item-title">
+              <p>Все важное на виду</p>
+              IPS матрица 2022 года!
+            </div>
+            <div>
+              <picture>
+                <source
+                  srcset="./img/screen/screen-img1.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/screen/screen-img1.png"
+                  type="image/png"
+                />
+                <img
+                  class="screen__img1"
+                  loading="lazy"
+                  src="./img/screen/screen-img1.png"
+                  alt="screen"
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="screen__item">
+            <div class="screen__item-title title-big">
+              Большой дисплей <span>3 дюйма!</span>
+            </div>
+            <div>
+              <picture>
+                <source
+                  srcset="./img/screen/screen-img2.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/screen/screen-img3.png"
+                  type="image/png"
+                />
+                <img
+                  class="screen__img2"
+                  loading="lazy"
+                  src="./img/screen/screen-img2.png"
+                  alt="screen"
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="screen__item">
+            <div class="screen__item-title">
+              <p>Разрешение</p>
+              640×360
+            </div>
+            <div>
+              <picture>
+                <source
+                  srcset="./img/screen/screen-img3.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/screen/screen-img3.png"
+                  type="image/png"
+                />
+                <img
+                  class="screen__img3"
+                  loading="lazy"
+                  src="./img/screen/screen-img3.png"
+                  alt="screen"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="screen__block">
+          <div class="screen__block-item">
+            <img
+              src="./img/screen/icon1.svg"
+              alt=""
+              class="screen__block-img"
+            />
+            <div class="screen__block-text">
+             <span> Большое изображение</span> с широким углом обзора
+            </div>
+          </div>
+          <div class="screen__block-item">
+            <img
+              src="./img/screen/icon2.svg"
+              alt=""
+              class="screen__block-img"
+            />
+            <div class="screen__block-text">
+              <span>Русская локализация</span> и удобный интерфейс
+            </div>
+          </div>
+          <div class="screen__block-item">
+            <img
+              src="./img/screen/icon3.svg"
+              alt=""
+              class="screen__block-img"
+            />
+            <div class="screen__block-text">
+              Заметные, <span>понятные иконки</span> навигации и шрифты
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer"></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
