@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>title</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -52,7 +54,6 @@
             </h1>
             <div class="hero__advantages advantages">
               <div
-              
                 data-aos-offset="200"
                 data-aos="fade-up"
                 class="advantages__item"
@@ -140,6 +141,7 @@
             <source srcset="./img/hero/bg.webp" type="image/webp" />
             <source srcset="./img/hero/bg.png" type="image/png" />
             <img
+              class="hero__img-bg"
               loading="lazy"
               src="./img/hero/bg.png"
               alt="Видеорегистратор"
@@ -150,6 +152,7 @@
           <img src="./img/hero/ellipse-bg1.png" alt="" />
         </div> -->
       </section>
+      <!-- ----------------------- ABOUT----------------------------------- -->
       <section class="about container" data-aos="fade-in">
         <div class="about__item">
           <div class="about__title">ТОП-1</div>
@@ -720,292 +723,1157 @@
             </button>
           </nav>
         </div>
-        <div class="tabs__subtitle">
-          Режим <span>автоматически переключает диапазоны пеленга</span> радаров
-          в зависимости от скорости. Например, при въезде или выезде из города.
+        <div class="tabs__container active">
+          <div class="tabs__subtitle">
+            Режим
+            <span>автоматически переключает диапазоны пеленга</span> радаров в
+            зависимости от скорости. Например, при въезде или выезде из города.
+          </div>
+          <div class="tabs__body">
+            <div class="tabs__block">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    data-aos="fade-up"
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    data-aos="fade-in"
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    data-aos="fade-in"
+                    data-aos-duration="1000"
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator1.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator1.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/registrator1.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator1.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator1.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/navigator.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator1.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator1.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/navigator.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="tabs__body">
-          <div class="tabs__block">
-            <div class="tabs__block-left">
-              <picture>
-                <source srcset="./img/mode/car1.webp" type="image/webp" />
-                <source srcset="./img/mode/car1.png" type="image/png" />
-                <img
-                  data-aos="fade-up"
-                  class="tabs__block-car1"
-                  loading="lazy"
-                  src="./img/mode/car1.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/car2.webp" type="image/webp" />
-                <source srcset="./img/mode/car2.png" type="image/png" />
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="50"
-                  data-aos-duration="1000"
-                  class="tabs__block-car2"
-                  loading="lazy"
-                  src="./img/mode/car2.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/road1.webp" type="image/webp" />
-                <source srcset="./img/mode/road1.png" type="image/png" />
-                <img
-                  class="tabs__block-road1"
-                  loading="lazy"
-                  src="./img/mode/road1.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/sign.webp" type="image/webp" />
-                <source srcset="./img/mode/sign.png" type="image/png" />
-                <img
-                  data-aos="fade-in"
-                  class="tabs__block-sign"
-                  loading="lazy"
-                  src="./img/mode/sign.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/name.webp" type="image/webp" />
-                <source srcset="./img/mode/name.png" type="image/png" />
-                <img
-                  data-aos="fade-in"
-                  data-aos-duration="1000"
-                  class="tabs__block-name"
-                  loading="lazy"
-                  src="./img/mode/name.png"
-                  alt="car"
-                />
-              </picture>
+        <div class="tabs__container">
+          <div class="tabs__subtitle">
+            Чувствительность радара выше, поэтому
+            <span>пеленг радаров осуществляется на большие расстояния. </span>
+          </div>
+          <div class="tabs__body">
+            <div class="tabs__block">
+              <div class="tabs__block-left">
+                <picture>
+                  <source
+                    srcset="./img/mode/tabs__container2/car1.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/tabs__container2/car1.png"
+                    type="image/png"
+                  />
+                  <img
+                    data-aos="fade-up"
+                    class="tabs__block-car3"
+                    loading="lazy"
+                    src="./img/mode/tabs__container2/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source
+                    srcset="./img/mode/tabs__container2/car2.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/tabs__container2/car2.png"
+                    type="image/png"
+                  />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    class="tabs__block-car4"
+                    loading="lazy"
+                    src="./img/mode/tabs__container2/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source
+                    srcset="./img/mode/tabs__container2/road.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/tabs__container2/road.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-road2"
+                    loading="lazy"
+                    src="./img/mode/tabs__container2/road.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source
+                    srcset="./img/mode/tabs__container2/sign2.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/tabs__container2/sign2.png"
+                    type="image/png"
+                  />
+                  <img
+                    data-aos="fade-in"
+                    class="tabs__block-sign2"
+                    loading="lazy"
+                    src="./img/mode/tabs__container2/sign2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source
+                    srcset="./img/mode/tabs__container2/name.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/tabs__container2/name.png"
+                    type="image/png"
+                  />
+                  <img
+                    data-aos="fade-in"
+                    data-aos-duration="1000"
+                    class="tabs__block-name2"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator2.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator2.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/registrator2.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
             </div>
-            <div class="tabs__block-right">
-              <picture>
-                <source
-                  srcset="./img/mode/registrator1.webp"
-                  type="image/webp"
-                />
-                <source srcset="./img/mode/registrator1.png" type="image/png" />
-                <img
-                  class="tabs__block-navigator"
-                  loading="lazy"
-                  src="./img/mode/navigator.png"
-                  alt="car"
-                />
-              </picture>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator1.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator1.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/navigator.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator2.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator2.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/registrator2.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
             </div>
           </div>
-          <div class="tabs__block tabs__block-none">
-            <div class="tabs__block-left">
-              <picture>
-                <source srcset="./img/mode/car1.webp" type="image/webp" />
-                <source srcset="./img/mode/car1.png" type="image/png" />
-                <img
-                  class="tabs__block-car1"
-                  loading="lazy"
-                  src="./img/mode/car1.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/car2.webp" type="image/webp" />
-                <source srcset="./img/mode/car2.png" type="image/png" />
-                <img
-                  class="tabs__block-car2"
-                  loading="lazy"
-                  src="./img/mode/car2.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/road1.webp" type="image/webp" />
-                <source srcset="./img/mode/road1.png" type="image/png" />
-                <img
-                  class="tabs__block-road1"
-                  loading="lazy"
-                  src="./img/mode/road1.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/sign.webp" type="image/webp" />
-                <source srcset="./img/mode/sign.png" type="image/png" />
-                <img
-                  class="tabs__block-sign"
-                  loading="lazy"
-                  src="./img/mode/sign.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/name.webp" type="image/webp" />
-                <source srcset="./img/mode/name.png" type="image/png" />
-                <img
-                  class="tabs__block-name"
-                  loading="lazy"
-                  src="./img/mode/name.png"
-                  alt="car"
-                />
-              </picture>
+        </div>
+        <div class="tabs__container">
+          <div class="tabs__subtitle">
+            <span> Чувствительность радара ниже, </span> так как скорость
+            передвижения автомобиля ниже.
+          </div>
+          <div class="tabs__body">
+            <div class="tabs__block">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    data-aos="fade-up"
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    data-aos="fade-in"
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    data-aos="fade-in"
+                    data-aos-duration="1000"
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator3.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator3.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/registrator3.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
             </div>
-            <div class="tabs__block-right">
-              <picture>
-                <source
-                  srcset="./img/mode/registrator1.webp"
-                  type="image/webp"
-                />
-                <source srcset="./img/mode/registrator1.png" type="image/png" />
-                <img
-                  class="tabs__block-navigator"
-                  loading="lazy"
-                  src="./img/mode/navigator.png"
-                  alt="car"
-                />
-              </picture>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
             </div>
           </div>
-          <div class="tabs__block tabs__block-none">
-            <div class="tabs__block-left">
-              <picture>
-                <source srcset="./img/mode/car1.webp" type="image/webp" />
-                <source srcset="./img/mode/car1.png" type="image/png" />
-                <img
-                  class="tabs__block-car1"
-                  loading="lazy"
-                  src="./img/mode/car1.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/car2.webp" type="image/webp" />
-                <source srcset="./img/mode/car2.png" type="image/png" />
-                <img
-                  class="tabs__block-car2"
-                  loading="lazy"
-                  src="./img/mode/car2.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/road1.webp" type="image/webp" />
-                <source srcset="./img/mode/road1.png" type="image/png" />
-                <img
-                  class="tabs__block-road1"
-                  loading="lazy"
-                  src="./img/mode/road1.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/sign.webp" type="image/webp" />
-                <source srcset="./img/mode/sign.png" type="image/png" />
-                <img
-                  class="tabs__block-sign"
-                  loading="lazy"
-                  src="./img/mode/sign.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/name.webp" type="image/webp" />
-                <source srcset="./img/mode/name.png" type="image/png" />
-                <img
-                  class="tabs__block-name"
-                  loading="lazy"
-                  src="./img/mode/name.png"
-                  alt="car"
-                />
-              </picture>
-            </div>
-            <div class="tabs__block-right">
-              <picture>
-                <source
-                  srcset="./img/mode/registrator1.webp"
-                  type="image/webp"
-                />
-                <source srcset="./img/mode/registrator1.png" type="image/png" />
-                <img
-                  class="tabs__block-navigator"
-                  loading="lazy"
-                  src="./img/mode/navigator.png"
-                  alt="car"
-                />
-              </picture>
-            </div>
+        </div>
+        <div class="tabs__container">
+          <div class="tabs__subtitle tabs__subtitle1">
+            <span>Для исключения ложных срабатываний</span> предусмотрен
+            сигнатурный режим, с помощью которого по излучению определяется и
+            отображается тип радара. Крис, Кордон и т.д.
           </div>
-          <div class="tabs__block tabs__block-none">
-            <div class="tabs__block-left">
-              <picture>
-                <source srcset="./img/mode/car1.webp" type="image/webp" />
-                <source srcset="./img/mode/car1.png" type="image/png" />
-                <img
-                  class="tabs__block-car1"
-                  loading="lazy"
-                  src="./img/mode/car1.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/car2.webp" type="image/webp" />
-                <source srcset="./img/mode/car2.png" type="image/png" />
-                <img
-                  class="tabs__block-car2"
-                  loading="lazy"
-                  src="./img/mode/car2.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/road1.webp" type="image/webp" />
-                <source srcset="./img/mode/road1.png" type="image/png" />
-                <img
-                  class="tabs__block-road1"
-                  loading="lazy"
-                  src="./img/mode/road1.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/sign.webp" type="image/webp" />
-                <source srcset="./img/mode/sign.png" type="image/png" />
-                <img
-                  class="tabs__block-sign"
-                  loading="lazy"
-                  src="./img/mode/sign.png"
-                  alt="car"
-                />
-              </picture>
-              <picture>
-                <source srcset="./img/mode/name.webp" type="image/webp" />
-                <source srcset="./img/mode/name.png" type="image/png" />
-                <img
-                  class="tabs__block-name"
-                  loading="lazy"
-                  src="./img/mode/name.png"
-                  alt="car"
-                />
-              </picture>
+          <div class="tabs__body">
+            <div class="tabs__block">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    data-aos="fade-up"
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    data-aos="fade-in"
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    data-aos="fade-in"
+                    data-aos-duration="1000"
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator4.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator4.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/registrator4.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
             </div>
-            <div class="tabs__block-right">
-              <picture>
-                <source
-                  srcset="./img/mode/registrator1.webp"
-                  type="image/webp"
-                />
-                <source srcset="./img/mode/registrator1.png" type="image/png" />
-                <img
-                  class="tabs__block-navigator"
-                  loading="lazy"
-                  src="./img/mode/navigator.png"
-                  alt="car"
-                />
-              </picture>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator4.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator4.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/registrator4.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator4.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator4.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/registrator4.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="tabs__block tabs__block-none">
+              <div class="tabs__block-left">
+                <picture>
+                  <source srcset="./img/mode/car1.webp" type="image/webp" />
+                  <source srcset="./img/mode/car1.png" type="image/png" />
+                  <img
+                    class="tabs__block-car1"
+                    loading="lazy"
+                    src="./img/mode/car1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/car2.webp" type="image/webp" />
+                  <source srcset="./img/mode/car2.png" type="image/png" />
+                  <img
+                    class="tabs__block-car2"
+                    loading="lazy"
+                    src="./img/mode/car2.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/road1.webp" type="image/webp" />
+                  <source srcset="./img/mode/road1.png" type="image/png" />
+                  <img
+                    class="tabs__block-road1"
+                    loading="lazy"
+                    src="./img/mode/road1.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/sign.webp" type="image/webp" />
+                  <source srcset="./img/mode/sign.png" type="image/png" />
+                  <img
+                    class="tabs__block-sign"
+                    loading="lazy"
+                    src="./img/mode/sign.png"
+                    alt="car"
+                  />
+                </picture>
+                <picture>
+                  <source srcset="./img/mode/name.webp" type="image/webp" />
+                  <source srcset="./img/mode/name.png" type="image/png" />
+                  <img
+                    class="tabs__block-name"
+                    loading="lazy"
+                    src="./img/mode/name.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
+              <div class="tabs__block-right">
+                <picture>
+                  <source
+                    srcset="./img/mode/registrator1.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./img/mode/registrator1.png"
+                    type="image/png"
+                  />
+                  <img
+                    class="tabs__block-navigator"
+                    loading="lazy"
+                    src="./img/mode/navigator.png"
+                    alt="car"
+                  />
+                </picture>
+              </div>
             </div>
           </div>
         </div>
@@ -1130,30 +1998,38 @@
           <div class="form__click">
             Закажите устройство с доставкой <span>в 1 клик</span>
           </div>
-          <form>
-            <label for="name">
+          <form id="form1" action="#" method="POST" class="form__element">
+            <label for="name" class="form__label">
               <div class="label__name">Ваше Фамилия и Имя*</div>
               <input
+                data-validate-field="name"
                 type="text"
-                minlength="3"
-                maxlength="20"
                 name="user-name"
                 id="name"
+                required
               />
             </label>
 
-            <label for="telephone">
+            <label class="form__label" for="telephone">
               <div class="label__name">Ваш телефон*</div>
-              <input type="tel" id="telephone" placeholder=""
+              <input
+                name="user-phone"
+                data-validate-field="tel"
+                type="tel"
+                id="telephone"
+                required
+                placeholder=""
             /></label>
-          </form>
-          <div class="form__footer">
-            <div class="form__button-text">
-              Нажимая на кнопку, вы даете согласие на обработку персональных
-              данных
+            <div class="form__footer">
+              <div class="form__button-text">
+                Нажимая на кнопку, вы даете согласие на обработку персональных
+                данных
+              </div>
+              <button type="submit" class="btn button button__form">
+                Заказать
+              </button>
             </div>
-            <a href="#" target="_blank" class="button button__form">Заказать</a>
-          </div>
+          </form>
         </div>
 
         <div class="form__img">
@@ -1259,81 +2135,369 @@
             </div>
           </div>
         </div>
-        <div class="alert__animation">
-          <div class="alert__left">
-            <picture>
-              <source srcset="./img/alert/road.webp" type="image/webp" />
-              <source srcset="./img/alert/road.png" type="image/png" />
-              <img
-                class="alert__img-road"
-                loading="lazy"
-                src="./img/alert/road.png"
-                alt="background"
-              />
-            </picture>
-            <picture>
-              <source srcset="./img/alert/road-green.webp" type="image/webp" />
-              <source srcset="./img/alert/road-green.png" type="image/png" />
-              <img
-                class="alert__img-road-green"
-                loading="lazy"
-                src="./img/alert/road-green.png"
-                alt="background"
-              />
-            </picture>
-            <picture>
-              <source srcset="./img/alert/car.webp" type="image/webp" />
-              <source srcset="./img/alert/car.png" type="image/png" />
-              <img
-                data-aos="fade-up"
-                class="alert__img-car"
-                loading="lazy"
-                src="./img/alert/car.png"
-                alt="background"
-              />
-            </picture>
-            <picture>
-              <source srcset="./img/alert/alert-sign.webp" type="image/webp" />
-              <source srcset="./img/alert/alert-sign.png" type="image/png" />
-              <img
-                class="alert__img-sign"
-                loading="lazy"
-                src="./img/alert/alert-sign.png"
-                alt="background"
-              />
-            </picture>
-            <picture>
-              <source srcset="./img/mode/sign.webp" type="image/webp" />
-              <source srcset="./img/mode/sign.png" type="image/png" />
-              <img
-                class="alert__img-sign2"
-                loading="lazy"
-                src="./img/mode/sign.png"
-                alt="car"
-              />
-            </picture>
-            <picture>
-              <source srcset="./img/alert/alert-name.webp" type="image/webp" />
-              <source srcset="./img/alert/alert-name.png" type="image/png" />
-              <img
-                class="alert__img-name"
-                loading="lazy"
-                src="./img/alert/alert-name.png"
-                alt="car"
-              />
-            </picture>
+        <div class="alert__tabs-wrapper">
+          <div class="alert__animation ">
+            <div class="alert__left">
+              <picture>
+                <source srcset="./img/alert/road.webp" type="image/webp" />
+                <source srcset="./img/alert/road.png" type="image/png" />
+                <img
+                  class="alert__img-road"
+                  loading="lazy"
+                  src="./img/alert/road.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/arrow1.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/arrow1.png" type="image/png" />
+                <img
+                  class="alert__img-road-arrow"
+                  loading="lazy"
+                  src="./img/alert/arrow1.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/road-green.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/road-green.png" type="image/png" />
+                <img
+                  class="alert__img-road-green"
+                  loading="lazy"
+                  src="./img/alert/road-green.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/alert/car.webp" type="image/webp" />
+                <source srcset="./img/alert/car.png" type="image/png" />
+                <img
+                 
+                  class="alert__img-car"
+                  loading="lazy"
+                  src="./img/alert/car.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/alert-sign.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/alert-sign.png" type="image/png" />
+                <img
+                  class="alert__img-sign"
+                  loading="lazy"
+                  src="./img/alert/alert-sign.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/sign.webp" type="image/webp" />
+                <source srcset="./img/mode/sign.png" type="image/png" />
+                <img
+                  class="alert__img-sign2"
+                  loading="lazy"
+                  src="./img/mode/sign.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/alert-name.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/alert-name.png" type="image/png" />
+                <img
+                  class="alert__img-name"
+                  loading="lazy"
+                  src="./img/alert/alert-name.png"
+                  alt="car"
+                />
+              </picture>
+            </div>
+
+            <div class="alert__right">
+              <picture>
+                <source srcset="./img/alert/alert-bg1.webp" type="image/webp" />
+                <source srcset="./img/alert/alert-bg1.png" type="image/png" />
+                <img
+                  class="alert__bg"
+                  loading="lazy"
+                  src="./img/alert/alert-bg1.png"
+                  alt="background"
+                />
+              </picture>
+            </div>
           </div>
-          <div class="alert__right">
-            <picture>
-              <source srcset="./img/alert/alert-bg1.webp" type="image/webp" />
-              <source srcset="./img/alert/alert-bg1.png" type="image/png" />
-              <img
-                class="alert__bg"
-                loading="lazy"
-                src="./img/alert/alert-bg1.png"
-                alt="background"
-              />
-            </picture>
+          <div class="alert__animation active">
+            <div class="alert__left">
+              <picture>
+                <source srcset="./img/alert/road.webp" type="image/webp" />
+                <source srcset="./img/alert/road.png" type="image/png" />
+                <img
+                  class="alert__img-road"
+                  loading="lazy"
+                  src="./img/alert/road.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/road-green2.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/road-green2.png" type="image/png" />
+                <img
+                  class="alert__img-road-green2"
+                  loading="lazy"
+                  src="./img/alert/road-green2.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/arrow1.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/arrow1.png" type="image/png" />
+                <img
+                  class="alert__img-road-arrow2"
+                  loading="lazy"
+                  src="./img/alert/arrow1.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/alert/alert-sign.webp" type="image/webp" />
+                <source srcset="./img/alert/alert-sign.png" type="image/png" />
+                <img
+                  class="alert__img-sign3"
+                  loading="lazy"
+                  src="./img/alert/alert-sign.png"
+                  alt="sign"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/alert/car2.webp" type="image/webp" />
+                <source srcset="./img/alert/car2.png" type="image/png" />
+                <img
+                  
+                  class="alert__img-car2"
+                  loading="lazy"
+                  src="./img/alert/car2.png"
+                  alt="car"
+                />
+              </picture>
+
+              
+              <picture>
+                <source
+                  srcset="./img/alert/alert-name2.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/alert-name2.png" type="image/png" />
+                <img
+                  class="alert__img-name2"
+                  loading="lazy"
+                  src="./img/alert/alert-name2.png"
+                  alt="name"
+                />
+              </picture>
+            </div>
+
+            <div class="alert__right">
+              <picture>
+                <source srcset="./img/alert/alert-bg2.webp" type="image/webp" />
+                <source srcset="./img/alert/alert-bg2.png" type="image/png" />
+                <img
+                  class="alert__bg"
+                  loading="lazy"
+                  src="./img/alert/alert-bg2.png"
+                  alt="background"
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="alert__animation">
+            <div class="alert__left">
+              <picture>
+                <source srcset="./img/alert/road.webp" type="image/webp" />
+                <source srcset="./img/alert/road.png" type="image/png" />
+                <img
+                  class="alert__img-road"
+                  loading="lazy"
+                  src="./img/alert/road.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/road-green.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/road-green.png" type="image/png" />
+                <img
+                  class="alert__img-road-green"
+                  loading="lazy"
+                  src="./img/alert/road-green.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/alert/car.webp" type="image/webp" />
+                <source srcset="./img/alert/car.png" type="image/png" />
+                <img
+                  data-aos="fade-up"
+                  class="alert__img-car"
+                  loading="lazy"
+                  src="./img/alert/car.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/alert-sign.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/alert-sign.png" type="image/png" />
+                <img
+                  class="alert__img-sign"
+                  loading="lazy"
+                  src="./img/alert/alert-sign.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/sign.webp" type="image/webp" />
+                <source srcset="./img/mode/sign.png" type="image/png" />
+                <img
+                  class="alert__img-sign2"
+                  loading="lazy"
+                  src="./img/mode/sign.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/alert-name.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/alert-name.png" type="image/png" />
+                <img
+                  class="alert__img-name"
+                  loading="lazy"
+                  src="./img/alert/alert-name.png"
+                  alt="car"
+                />
+              </picture>
+            </div>
+
+            <div class="alert__right">
+              <picture>
+                <source srcset="./img/alert/alert-bg3.webp" type="image/webp" />
+                <source srcset="./img/alert/alert-bg3.png" type="image/png" />
+                <img
+                  class="alert__bg"
+                  loading="lazy"
+                  src="./img/alert/alert-bg3.png"
+                  alt="background"
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="alert__animation">
+            <div class="alert__left">
+              <picture>
+                <source srcset="./img/alert/road.webp" type="image/webp" />
+                <source srcset="./img/alert/road.png" type="image/png" />
+                <img
+                  class="alert__img-road"
+                  loading="lazy"
+                  src="./img/alert/road.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/road-green.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/road-green.png" type="image/png" />
+                <img
+                  class="alert__img-road-green"
+                  loading="lazy"
+                  src="./img/alert/road-green.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/alert/car.webp" type="image/webp" />
+                <source srcset="./img/alert/car.png" type="image/png" />
+                <img
+                  data-aos="fade-up"
+                  class="alert__img-car"
+                  loading="lazy"
+                  src="./img/alert/car.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/alert-sign.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/alert-sign.png" type="image/png" />
+                <img
+                  class="alert__img-sign"
+                  loading="lazy"
+                  src="./img/alert/alert-sign.png"
+                  alt="background"
+                />
+              </picture>
+              <picture>
+                <source srcset="./img/mode/sign.webp" type="image/webp" />
+                <source srcset="./img/mode/sign.png" type="image/png" />
+                <img
+                  class="alert__img-sign2"
+                  loading="lazy"
+                  src="./img/mode/sign.png"
+                  alt="car"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/alert/alert-name.webp"
+                  type="image/webp"
+                />
+                <source srcset="./img/alert/alert-name.png" type="image/png" />
+                <img
+                  class="alert__img-name"
+                  loading="lazy"
+                  src="./img/alert/alert-name.png"
+                  alt="car"
+                />
+              </picture>
+            </div>
+
+            <div class="alert__right">
+              <picture>
+                <source srcset="./img/alert/alert-bg4.webp" type="image/webp" />
+                <source srcset="./img/alert/alert-bg4.png" type="image/png" />
+                <img
+                  class="alert__bg"
+                  loading="lazy"
+                  src="./img/alert/alert-bg4.png"
+                  alt="background"
+                />
+              </picture>
+            </div>
           </div>
         </div>
       </section>
@@ -1577,23 +2741,79 @@
               <div class="interface__text">Дополнительные типы контроля</div>
             </div>
           </div>
-          <div class="interface__img">
-            <picture>
-              <source
-                srcset="./img/interface/intreface-bg.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./img/interface/intreface-bg.png"
-                type="image/png"
-              />
-              <img
-                class="interface__img-bg"
-                loading="lazy"
-                src="./img/interface/intreface-bg.png"
-                alt="radar"
-              />
-            </picture>
+          <div class="interface__img-block">
+            <div class="interface__img active">
+              <picture>
+                <source
+                  srcset="./img/interface/intreface-bg.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/interface/intreface-bg.png"
+                  type="image/png"
+                />
+                <img
+                  class="interface__img-bg"
+                  loading="lazy"
+                  src="./img/interface/intreface-bg.png"
+                  alt="radar"
+                />
+              </picture>
+            </div>
+            <div class="interface__img">
+              <picture>
+                <source
+                  srcset="./img/interface/intreface-bg2.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/interface/intreface-bg2.png"
+                  type="image/png"
+                />
+                <img
+                  class="interface__img-bg"
+                  loading="lazy"
+                  src="./img/interface/intreface-bg2.png"
+                  alt="radar"
+                />
+              </picture>
+            </div>
+            <div class="interface__img">
+              <picture>
+                <source
+                  srcset="./img/interface/intreface-bg3.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/interface/intreface-bg3.png"
+                  type="image/png"
+                />
+                <img
+                  class="interface__img-bg"
+                  loading="lazy"
+                  src="./img/interface/intreface-bg3.png"
+                  alt="radar"
+                />
+              </picture>
+            </div>
+            <div class="interface__img">
+              <picture>
+                <source
+                  srcset="./img/interface/intreface-bg4.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/interface/intreface-bg4.png"
+                  type="image/png"
+                />
+                <img
+                  class="interface__img-bg"
+                  loading="lazy"
+                  src="./img/interface/intreface-bg4.png"
+                  alt="radar"
+                />
+              </picture>
+            </div>
           </div>
         </div>
       </section>
@@ -1726,7 +2946,7 @@
             <div class="form__click" data-aos="fade-in">
               Закажите устройство с доставкой <span>в 1 клик</span>
             </div>
-            <form data-aos="fade-in">
+            <form id="form2" data-aos="fade-in" class="form__element">
               <label for="name">
                 <div class="label__name">Ваше Фамилия и Имя*</div>
                 <input
@@ -1740,18 +2960,18 @@
 
               <label for="telephone">
                 <div class="label__name">Ваш телефон*</div>
-                <input type="tel" id="telephone" placeholder=""
+                <input name="user-tel" type="tel" placeholder=""
               /></label>
-            </form>
-            <div class="form__footer" data-aos="fade-in">
-              <div class="form__button-text">
-                Нажимая на кнопку, вы даете согласие на обработку персональных
-                данных
+              <div class="form__footer" data-aos="fade-in">
+                <div class="form__button-text">
+                  Нажимая на кнопку, вы даете согласие на обработку персональных
+                  данных
+                </div>
+                <button type="submit" class="button button__form">
+                  Заказать
+                </button>
               </div>
-              <a href="#" target="_blank" class="button button__form"
-                >Заказать</a
-              >
-            </div>
+            </form>
           </div>
           <div class="form__right">
             <div class="form__check">
@@ -1765,11 +2985,12 @@
                 class="form__check-icon"
               />
             </div>
-            <div class="form__img" >
+            <div class="form__img">
               <picture>
                 <source srcset="./img/form/form-bg2.webp" type="image/webp" />
                 <source srcset="./img/form/form-bg2.png" type="image/png" />
-                <img data-aos="fade-in"
+                <img
+                  data-aos="fade-in"
                   class="form__img-bg2"
                   src="./img/form/form-bg2.png"
                   alt="background"
@@ -1814,20 +3035,18 @@
           </div>
 
           <div class="quality__item1">
-            <div class="item__info" data-aos="fade-in"  data-aos-delay="100">
+            <div class="item__info" data-aos="fade-in" data-aos-delay="100">
               <div class="item__title">Видеосъемка FullHD</div>
               <div class="item__text">1920×1080 Захват 30 кадров в секунду</div>
             </div>
-            <img  data-aos-delay="500"
+            <img
+              data-aos-delay="500"
               src="./img/quality/line/line1.svg"
               alt="line"
               class="item__icon"
             />
           </div>
-          <div
-            class="quality__item2"
-            data-aos="fade-in"
-          >
+          <div class="quality__item2" data-aos="fade-in">
             <div class="item__info" data-aos="fade-in" data-aos-delay="100">
               <div class="item__title">Широкий угол обзора</div>
               <div class="item__text">
@@ -1880,7 +3099,7 @@
             </div>
             <img
               data-aos="fade-in"
-             data-aos-delay="500"
+              data-aos-delay="500"
               src="./img/quality/line/line5.svg"
               alt="line"
               class="item__icon"
@@ -1927,7 +3146,7 @@
             </div>
             <img
               data-aos="fade-in"
-             data-aos-delay="500"
+              data-aos-delay="500"
               src="./img/quality/line/line8.svg"
               alt="line"
               class="item__icon"
@@ -2042,11 +3261,12 @@
         <div class="shooting__subtitle" data-aos="fade-in">
           Посмотрите примеры видео
         </div>
-        <div
-          class="shooting__video"
-        >
+        <div class="shooting__video">
           <div class="shooting__video-left">
-            <div data-aos="fade-right" class="shooting__video-item video__item-one">
+            <div
+              data-aos="fade-right"
+              class="shooting__video-item video__item-one"
+            >
               <a class="video__link" href="#">
                 <picture>
                   <source
@@ -2072,20 +3292,23 @@
                 />
               </a>
             </div>
-            <div data-aos="fade-right" class="shooting__video-item video__item-two">
+            <div
+              data-aos="fade-right"
+              class="shooting__video-item video__item-two"
+            >
               <a class="video__link" href="#">
                 <picture>
                   <source
-                    srcset="./img/shooting/bg-video-link3.webp"
+                    srcset="./img/shooting/bg-video-link2.webp"
                     type="image/webp"
                   />
                   <source
-                    srcset="./img/shooting/bg-video-link3.png"
+                    srcset="./img/shooting/bg-video-link2.png"
                     type="image/png"
                   />
                   <img
                     class="video__link-bg"
-                    src="./img/shooting/bg-video-link3.png"
+                    src="./img/shooting/bg-video-link2.png"
                     alt=""
                   />
                 </picture>
@@ -2098,7 +3321,10 @@
               </a>
             </div>
 
-            <div data-aos="fade-right" class="shooting__video-item video__item-three">
+            <div
+              data-aos="fade-right"
+              class="shooting__video-item video__item-three"
+            >
               <a class="video__link" href="#">
                 <picture>
                   <source
@@ -2124,7 +3350,10 @@
               </a>
             </div>
 
-            <div data-aos="fade-right" class="shooting__video-item video__item-foor">
+            <div
+              data-aos="fade-right"
+              class="shooting__video-item video__item-foor"
+            >
               <a class="video__link" href="#">
                 <picture>
                   <source
@@ -2176,8 +3405,54 @@
                 type="image/png"
               />
               <img
-                class="shooting__video-play"
+                class="shooting__video-play active"
                 src="./img/shooting/shooting-bg-play.png"
+                alt="shooting"
+              />
+            </picture>
+            <picture>
+              <source
+                srcset="./img/shooting/shooting-bg-play1.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="./img/shooting/shooting-bg-play1.png"
+                type="image/png"
+              />
+              <img
+                class="shooting__video-play"
+                z
+                src="./img/shooting/shooting-bg-play1.png"
+                alt="shooting"
+              />
+            </picture>
+            <picture>
+              <source
+                srcset="./img/shooting/shooting-bg-play2.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="./img/shooting/shooting-bg-play2.png"
+                type="image/png"
+              />
+              <img
+                class="shooting__video-play"
+                src="./img/shooting/shooting-bg-play2.png"
+                alt="shooting"
+              />
+            </picture>
+            <picture>
+              <source
+                srcset="./img/shooting/shooting-bg-play3.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="./img/shooting/shooting-bg-play3.png"
+                type="image/png"
+              />
+              <img
+                class="shooting__video-play"
+                src="./img/shooting/shooting-bg-play3.png"
                 alt="shooting"
               />
             </picture>
@@ -2643,7 +3918,8 @@
                 <source srcset="./img/protection/car1.webp" type="image/webp" />
                 <source srcset="./img/protection/car1.png" type="image/png" />
                 <img
-                  data-aos="fade-left" data-aos-delay="300"
+                  data-aos="fade-left"
+                  data-aos-delay="300"
                   class="protection__car-img1"
                   src="./img/protection/car1.png"
                   alt="car"
@@ -2662,7 +3938,8 @@
                 <source srcset="./img/protection/bang.webp" type="image/webp" />
                 <source srcset="./img/protection/bang.png" type="image/png" />
                 <img
-                data-aos="zoom-in" data-aos-delay="700"
+                  data-aos="zoom-in"
+                  data-aos-delay="700"
                   class="protection__bang-img"
                   src="./img/protection/bang.png"
                   alt="car"
@@ -3684,103 +4961,333 @@
             </div>
           </div>
         </div>
-        <div class="examination__slider">
-          <div class="slider__item">
-            <div class="slider__item-title">
-              Видео-отзыв о покупке устройства Onlooker R5
-            </div>
-            <picture>
-              <source
-                srcset="./img/examination/slider.webp"
-                type="image/webp"
-                loading="lazy"
-              />
-              <source
-                srcset="./img/examination/slider.png"
-                type="image/png"
-                loading="lazy"
-              />
-              <img
-                class="examination__img"
-                src="./img/examination/slider.png"
-                alt="examination"
-                loading="lazy"
-              />
-            </picture>
-            <div class="slider__subtitle">Краткие тезисы из видео:</div>
-            <div class="slider__thesis-wrap">
-              <div class="slider__thesis">
-                Быстро реагирует на дорожную обстановку
+        <div class="swiper">
+          <div class="swiper-wrapper examination__slider">
+            <div class="swiper-slide slider__item">
+              <div class="slider__item-title">
+                Видео-отзыв о покупке устройства Onlooker R5
               </div>
-              <div class="slider__thesis">Заранее сообщает о камерах</div>
-              <div class="slider__thesis">Все видно спереди и сзади машины</div>
+              <picture>
+                <source
+                  srcset="./img/examination/slider.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/examination/slider.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="examination__img"
+                  src="./img/examination/slider.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="slider__subtitle">Краткие тезисы из видео:</div>
+              <div class="slider__thesis-wrap">
+                <div class="slider__thesis">
+                  Быстро реагирует на дорожную обстановку
+                </div>
+                <div class="slider__thesis">Заранее сообщает о камерах</div>
+                <div class="slider__thesis">
+                  Все видно спереди и сзади машины
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slider__item">
+              <div class="slider__item-title">
+                Видео-отзыв о покупке устройства Onlooker R5
+              </div>
+              <picture>
+                <source
+                  srcset="./img/examination/slider.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/examination/slider.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="examination__img"
+                  src="./img/examination/slider.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="slider__subtitle">Краткие тезисы из видео:</div>
+              <div class="slider__thesis-wrap">
+                <div class="slider__thesis">
+                  Быстро реагирует на дорожную обстановку
+                </div>
+                <div class="slider__thesis">Заранее сообщает о камерах</div>
+                <div class="slider__thesis">
+                  Все видно спереди и сзади машины
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slider__item">
+              <div class="slider__item-title">
+                Видео-отзыв о покупке устройства Onlooker R5
+              </div>
+              <picture>
+                <source
+                  srcset="./img/examination/slider.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/examination/slider.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="examination__img"
+                  src="./img/examination/slider.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="slider__subtitle">Краткие тезисы из видео:</div>
+              <div class="slider__thesis-wrap">
+                <div class="slider__thesis">
+                  Быстро реагирует на дорожную обстановку
+                </div>
+                <div class="slider__thesis">Заранее сообщает о камерах</div>
+                <div class="slider__thesis">
+                  Все видно спереди и сзади машины
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slider__item">
+              <div class="slider__item-title">
+                Видео-отзыв о покупке устройства Onlooker R5
+              </div>
+              <picture>
+                <source
+                  srcset="./img/examination/slider.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/examination/slider.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="examination__img"
+                  src="./img/examination/slider.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="slider__subtitle">Краткие тезисы из видео:</div>
+              <div class="slider__thesis-wrap">
+                <div class="slider__thesis">
+                  Быстро реагирует на дорожную обстановку
+                </div>
+                <div class="slider__thesis">Заранее сообщает о камерах</div>
+                <div class="slider__thesis">
+                  Все видно спереди и сзади машины
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slider__item">
+              <div class="slider__item-title">
+                Видео-отзыв о покупке устройства Onlooker R5
+              </div>
+              <picture>
+                <source
+                  srcset="./img/examination/slider.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/examination/slider.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="examination__img"
+                  src="./img/examination/slider.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="slider__subtitle">Краткие тезисы из видео:</div>
+              <div class="slider__thesis-wrap">
+                <div class="slider__thesis">
+                  Быстро реагирует на дорожную обстановку
+                </div>
+                <div class="slider__thesis">Заранее сообщает о камерах</div>
+                <div class="slider__thesis">
+                  Все видно спереди и сзади машины
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slider__item">
+              <div class="slider__item-title">
+                Видео-отзыв о покупке устройства Onlooker R5
+              </div>
+              <picture>
+                <source
+                  srcset="./img/examination/slider.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/examination/slider.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="examination__img"
+                  src="./img/examination/slider.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="slider__subtitle">Краткие тезисы из видео:</div>
+              <div class="slider__thesis-wrap">
+                <div class="slider__thesis">
+                  Быстро реагирует на дорожную обстановку
+                </div>
+                <div class="slider__thesis">Заранее сообщает о камерах</div>
+                <div class="slider__thesis">
+                  Все видно спереди и сзади машины
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slider__item">
+              <div class="slider__item-title">
+                Видео-отзыв о покупке устройства Onlooker R5
+              </div>
+              <picture>
+                <source
+                  srcset="./img/examination/slider.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/examination/slider.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="examination__img"
+                  src="./img/examination/slider.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="slider__subtitle">Краткие тезисы из видео:</div>
+              <div class="slider__thesis-wrap">
+                <div class="slider__thesis">
+                  Быстро реагирует на дорожную обстановку
+                </div>
+                <div class="slider__thesis">Заранее сообщает о камерах</div>
+                <div class="slider__thesis">
+                  Все видно спереди и сзади машины
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide slider__item">
+              <div class="slider__item-title">
+                Видео-отзыв о покупке устройства Onlooker R5
+              </div>
+              <picture>
+                <source
+                  srcset="./img/examination/slider.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/examination/slider.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="examination__img"
+                  src="./img/examination/slider.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="slider__subtitle">Краткие тезисы из видео:</div>
+              <div class="slider__thesis-wrap">
+                <div class="slider__thesis">
+                  Быстро реагирует на дорожную обстановку
+                </div>
+                <div class="slider__thesis">Заранее сообщает о камерах</div>
+                <div class="slider__thesis">
+                  Все видно спереди и сзади машины
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slider__item">
+              <div class="slider__item-title">
+                Видео-отзыв о покупке устройства Onlooker R5
+              </div>
+              <picture>
+                <source
+                  srcset="./img/examination/slider.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/examination/slider.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="examination__img"
+                  src="./img/examination/slider.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="slider__subtitle">Краткие тезисы из видео:</div>
+              <div class="slider__thesis-wrap">
+                <div class="slider__thesis">
+                  Быстро реагирует на дорожную обстановку
+                </div>
+                <div class="slider__thesis">Заранее сообщает о камерах</div>
+                <div class="slider__thesis">
+                  Все видно спереди и сзади машины
+                </div>
+              </div>
             </div>
           </div>
-          <div class="slider__item">
-            <div class="slider__item-title">
-              Видео-отзыв о покупке устройства Onlooker R5
-            </div>
-            <picture>
-              <source
-                srcset="./img/examination/slider.webp"
-                type="image/webp"
-                loading="lazy"
-              />
-              <source
-                srcset="./img/examination/slider.png"
-                type="image/png"
-                loading="lazy"
-              />
-              <img
-                class="examination__img"
-                src="./img/examination/slider.png"
-                alt="examination"
-                loading="lazy"
-              />
-            </picture>
-            <div class="slider__subtitle">Краткие тезисы из видео:</div>
-            <div class="slider__thesis-wrap">
-              <div class="slider__thesis">
-                Быстро реагирует на дорожную обстановку
-              </div>
-              <div class="slider__thesis">Заранее сообщает о камерах</div>
-              <div class="slider__thesis">Все видно спереди и сзади машины</div>
-            </div>
-          </div>
-          <div class="slider__item">
-            <div class="slider__item-title">
-              Видео-отзыв о покупке устройства Onlooker R5
-            </div>
-            <picture>
-              <source
-                srcset="./img/examination/slider.webp"
-                type="image/webp"
-                loading="lazy"
-              />
-              <source
-                srcset="./img/examination/slider.png"
-                type="image/png"
-                loading="lazy"
-              />
-              <img
-                class="examination__img"
-                src="./img/examination/slider.png"
-                alt="examination"
-                loading="lazy"
-              />
-            </picture>
-            <div class="slider__subtitle">Краткие тезисы из видео:</div>
-            <div class="slider__thesis-wrap">
-              <div class="slider__thesis">
-                Быстро реагирует на дорожную обстановку
-              </div>
-              <div class="slider__thesis">Заранее сообщает о камерах</div>
-              <div class="slider__thesis">Все видно спереди и сзади машины</div>
-            </div>
-          </div>
+
+          <div class="swiper-pagination"></div>
         </div>
-        <span class="arrow-left"></span>
-        <span class="arrow-right"></span>
+                  <div class="swiper-button-prev arrow-left">
+            <svg
+              width="11"
+              height="21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity=".8"
+                d="M.225 10.139L9.36.914a.76.76 0 011.083.001.782.782 0 01-.002 1.097L1.85 10.687l8.592 8.676c.299.303.3.793.001 1.097a.76.76 0 01-1.083.001L.225 11.236a.78.78 0 010-1.097z"
+                fill="#333"
+              />
+            </svg>
+          </div>
+          <div class="swiper-button-next arrow-right">
+            <svg width="11" height="21" xmlns="http://www.w3.org/2000/svg">
+              <path
+                opacity=".8"
+                d="M10.775 10.139L1.64.914A.76.76 0 00.557.915a.782.782 0 00.002 1.097l8.591 8.675-8.592 8.676c-.3.303-.3.793-.001 1.097a.76.76 0 001.083.001l9.135-9.225a.78.78 0 000-1.097z"
+                fill="#333"
+              />
+            </svg>
+          </div>
         <div class="examination__btn">
           <a href="#" class="examination__button button">Оставить отзыв</a>
         </div>
@@ -4026,6 +5533,11 @@
                 alt=""
                 class="answerblock__icon"
               />
+              <img
+                src="./img/answers/close.svg"
+                alt=""
+                class="answerblock__icon-close"
+              />
             </div>
             <div class="answerblock__item-text">
               Мы - компания, уважающая пользователей и свою репутацию. Поэтому
@@ -4045,6 +5557,11 @@
                 src="./img/answers/plus.svg"
                 alt=""
                 class="answerblock__icon"
+              />
+              <img
+                src="./img/answers/close.svg"
+                alt=""
+                class="answerblock__icon-close"
               />
             </div>
             <div class="answerblock__item-text">
@@ -4066,6 +5583,11 @@
                 alt=""
                 class="answerblock__icon"
               />
+              <img
+                src="./img/answers/close.svg"
+                alt=""
+                class="answerblock__icon-close"
+              />
             </div>
             <div class="answerblock__item-text">
               Мы - компания, уважающая пользователей и свою репутацию. Поэтому
@@ -4085,6 +5607,11 @@
                 src="./img/answers/plus.svg"
                 alt=""
                 class="answerblock__icon"
+              />
+              <img
+                src="./img/answers/close.svg"
+                alt=""
+                class="answerblock__icon-close"
               />
             </div>
             <div class="answerblock__item-text">
@@ -4107,6 +5634,11 @@
                 alt=""
                 class="answerblock__icon"
               />
+              <img
+                src="./img/answers/close.svg"
+                alt=""
+                class="answerblock__icon-close"
+              />
             </div>
             <div class="answerblock__item-text">
               Мы - компания, уважающая пользователей и свою репутацию. Поэтому
@@ -4126,6 +5658,11 @@
                 src="./img/answers/plus.svg"
                 alt=""
                 class="answerblock__icon"
+              />
+              <img
+                src="./img/answers/close.svg"
+                alt=""
+                class="answerblock__icon-close"
               />
             </div>
             <div class="answerblock__item-text">
@@ -4147,6 +5684,11 @@
                 alt=""
                 class="answerblock__icon"
               />
+              <img
+                src="./img/answers/close.svg"
+                alt=""
+                class="answerblock__icon-close"
+              />
             </div>
             <div class="answerblock__item-text">
               Мы - компания, уважающая пользователей и свою репутацию. Поэтому
@@ -4167,6 +5709,11 @@
                 alt=""
                 class="answerblock__icon"
               />
+              <img
+                src="./img/answers/close.svg"
+                alt=""
+                class="answerblock__icon-close"
+              />
             </div>
             <div class="answerblock__item-text">
               Мы - компания, уважающая пользователей и свою репутацию. Поэтому
@@ -4179,6 +5726,7 @@
           </div>
         </div>
       </section>
+      <!-- ----------------------------- cartreader---------------------------------------- -->
       <section class="cartreader container">
         <div class="cartreader__left">
           <picture>
@@ -4563,7 +6111,7 @@
             <div class="form__click">
               Закажите устройство с доставкой <span>в 1 клик</span>
             </div>
-            <form>
+            <form class="form__element">
               <label for="name">
                 <div class="label__name">Ваше Фамилия и Имя*</div>
                 <input
@@ -4579,16 +6127,14 @@
                 <div class="label__name">Ваш телефон*</div>
                 <input type="tel" id="telephone2" placeholder=""
               /></label>
-            </form>
-            <div class="form__footer">
-              <div class="form__button-text">
-                Нажимая на кнопку, вы даете согласие на обработку персональных
-                данных
+              <div class="form__footer">
+                <div class="form__button-text">
+                  Нажимая на кнопку, вы даете согласие на обработку персональных
+                  данных
+                </div>
+                <button class="button button__form">Заказать</button>
               </div>
-              <a href="#" target="_blank" class="button button__form"
-                >Заказать</a
-              >
-            </div>
+            </form>
           </div>
         </div>
 
@@ -4608,7 +6154,7 @@
 
       <!-- -----------------------------SUPPORT---------------------------------------- -->
 
-      <section class="support container"   data-aos="fade-in">
+      <section class="support container" data-aos="fade-in">
         <div class="support__left">
           <div class="support__title">Техподдержка на связи 24/7</div>
           <div class="support__subtitle">
@@ -4645,8 +6191,8 @@
 
       <!-- ----------------------- step ------------------------------ -->
       <section class="step container">
-        <div class="step__title"   data-aos="fade-in">Шаги для покупки</div>
-        <div class="step__items update__items"   data-aos="fade-in">
+        <div class="step__title" data-aos="fade-in">Шаги для покупки</div>
+        <div class="step__items update__items" data-aos="fade-in">
           <div class="update__item">
             <div class="update__number step__number1">01</div>
             <div class="update__info">
@@ -4704,8 +6250,10 @@
       </section>
       <!------------------------------- purchase -----------------------------------  -->
       <section class="purchase container">
-        <div class="purchase__title"   data-aos="fade-in">Остались вопросы перед покупкой?</div>
-        <div class="purchase__items"   data-aos="fade-in">
+        <div class="purchase__title" data-aos="fade-in">
+          Остались вопросы перед покупкой?
+        </div>
+        <div class="purchase__items" data-aos="fade-in">
           <div class="purchase__item">
             Узнайте, подойдет ли устройство <span>к вашему авто</span>
           </div>
@@ -4717,14 +6265,19 @@
           </div>
         </div>
         <div class="purchase__form">
-          <form>
-            <label for="telephone"></label>
-            <input type="tel" id="telephone33" placeholder="Ваш телефон" />
+          <form action="#" method="POST" class="form__element">
+            <label class="form__label" for="telephone"></label>
+            <input
+              name="user-phone"
+              data-validate-field="tel"
+              type="tel"
+              placeholder="Ваш телефон"
+              required
+            />
+            <button class="purchase__button button" type="submit">
+              Получить консультацию
+            </button>
           </form>
-
-          <button class="purchase__button button" type="submit">
-            Получить консультацию
-          </button>
         </div>
         <div class="purchase__chat">
           Или напишите нам <span><a href="#">в онлайн чат</a></span>
@@ -4732,7 +6285,8 @@
         <picture>
           <source srcset="./img/purchase/purchase-img.webp" type="image/webp" />
           <source srcset="./img/purchase/purchase-img.png" type="image/png" />
-          <img   data-aos="fade-in"
+          <img
+            data-aos="fade-in"
             class="purchase__img"
             src="./img/purchase/purchase-img.png"
             alt="bg"
@@ -4866,7 +6420,7 @@
                       fill-rule="evenodd"
                       clip-rule="evenodd"
                       d="M9.75 14.945c-.021 1.854-.14 2.896-.787 3.591-.647.695-1.618.822-3.344.845v.274c1.726.023 2.697.15 3.344.845.648.695.766 1.737.787 3.59h.255c.022-1.853.14-2.895.787-3.59.648-.695 1.618-.822 3.344-.845v-.274c-1.726-.023-2.696-.15-3.344-.845-.647-.695-.765-1.737-.787-3.59H9.75z"
-                      fill="#fff"
+                      fill="#ffffff"
                     />
                     <path
                       d="M17.07 24.385v-1.437h3.433v1.437h1.042v-2.368h-.6v-5.954h-3.921l-.11 3.418c-.038 1.11-.148 2.01-.444 2.536h-.442v2.368h1.042zm.821-4.746l.083-2.645h1.855v5.023h-2.307c.194-.466.332-1.268.37-2.378zm5.528 2.477c-.563 0-1.117-.218-1.412-.456v.96c.212.19.747.427 1.54.427 1.172 0 1.79-.565 1.79-1.565 0-.585-.34-.981-.95-1.12.572-.198.812-.634.812-1.189 0-.842-.618-1.308-1.614-1.308-.72 0-1.19.238-1.458.417v.96c.295-.207.701-.445 1.3-.445.407 0 .665.208.665.574 0 .387-.221.595-.673.595h-.692v.891h.692c.562 0 .784.179.784.615 0 .396-.268.644-.784.644zm6.073.495v-.961a2.663 2.663 0 01-1.448.466c-.803 0-1.108-.407-1.154-1.239h2.648v-.624c0-1.734-.71-2.388-1.808-2.388-1.338 0-1.975 1.1-1.975 2.606 0 1.734.794 2.576 2.196 2.576.701 0 1.218-.198 1.541-.436zm-1.78-3.814c.544 0 .71.485.71 1.11v.098H26.89c.028-.792.296-1.208.821-1.208zm5.128-.834v1.972h-1.468v-1.972h-1.098v4.983h1.098v-2.08h1.467v2.08h1.098v-4.983H32.84z"
@@ -5054,8 +6608,13 @@
       </picture>
     </section>
 
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/inputmask.min.js"></script>
+    <script src="js/just-validate.min.js"></script>
     <script src="js/main.js"></script>
+
     <script>
       AOS.init();
     </script>
