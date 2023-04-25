@@ -41,12 +41,19 @@ forms.forEach(form => {
 const swiper = new Swiper(".swiper", {
   slidesPerView: 3,
   spaceBetween: 70,
-  
-
 
   pagination: {
     el: ".swiper-pagination",
-    type: 'bullets'
+    type: "bullets"
+  },
+  autoplay: {
+    delay: 3000
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 30
+    }
   },
   navigation: {
     nextEl: ".swiper-button-next",
@@ -159,4 +166,32 @@ itemHover.forEach((item, index) => {
     });
     sectionHover[index].classList.add("active");
   });
+});
+
+
+// переключатель checkbox 
+
+const toggleCheckbox = document.querySelector('input[type="checkbox"]');
+const briefly = document.querySelector(".charachterisitc__wrapper");
+const detail = document.querySelector(".elevanth__tabl-wrapper");
+
+
+toggleCheckbox.addEventListener('change', () => {
+  if(toggleCheckbox.checked) {
+    briefly.style.display = 'none';
+    detail.style.display = "block";
+  } else {
+      briefly.style.display = "block";
+      detail.style.display = "none";
+  }
+})
+
+
+// бургер меню 
+
+const navbarToggle = document.getElementById("navbar__toggle");
+const navbarMenu = document.getElementById("navbar");
+
+navbarToggle.addEventListener("click", () => {
+  navbarMenu.classList.toggle("active");
 });
