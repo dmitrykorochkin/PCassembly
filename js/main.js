@@ -72,7 +72,6 @@ let plus = document.querySelectorAll(".answerblock__icon");
 let close = document.querySelectorAll(".answerblock__icon-close");
 let title = document.querySelectorAll(".answerblock__item-title ");
 
-
 accordion.addEventListener("click", e => {
   const target = e.target.closest(".answerblock__item");
 
@@ -86,7 +85,7 @@ accordion.addEventListener("click", e => {
         close[index].style.display = "block";
       } else {
         answer[index].classList.remove("active");
-         title[index].classList.remove("active-item");
+        title[index].classList.remove("active-item");
         tab[index].classList.remove("answerblock__item-active");
         plus[index].style.display = "block";
         close[index].style.display = "none";
@@ -170,12 +169,18 @@ itemHover.forEach((item, index) => {
 const toggleCheckbox = document.querySelector('input[type="checkbox"]');
 const briefly = document.querySelector(".charachterisitc__wrapper");
 const detail = document.querySelector(".elevanth__tabl-wrapper");
+const brieflyActive = document.querySelector(".characteristic__briefly");
+const detailActive = document.querySelector(".characteristic__detail");
 
 toggleCheckbox.addEventListener("change", () => {
   if (toggleCheckbox.checked) {
+    brieflyActive.classList.remove("_active");
+    detailActive.classList.add("_active");
     briefly.style.display = "none";
     detail.style.display = "block";
   } else {
+    brieflyActive.classList.add("_active");
+    detailActive.classList.remove("_active");
     briefly.style.display = "block";
     detail.style.display = "none";
   }
@@ -245,34 +250,87 @@ window.onscroll = function() {
   }
 };
 
+// == Custom cursor ==========--
+const cursor = document.querySelector(".coursor");
 
-  // == Custom cursor ==========
-  const cursor = document.querySelector(".coursor");
+document.addEventListener("mousemove", function(e) {
+  cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+});
 
-  document.addEventListener("mousemove", function (e) {
-    cursor.style.cssText =
-      "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-  });
+document.addEventListener("mouseover", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("_over");
+  }
+});
 
-  document.addEventListener("mouseover", function (e) {
-    if (e.target.closest("button, a")) {
+document.addEventListener("mouseout", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.remove("_over");
+  }
+});
+
+document.addEventListener("mousedown", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("click");
+    cursor.classList.remove("_over");
+    setTimeout(function() {
+      cursor.classList.remove("click");
       cursor.classList.add("_over");
-    }
-  });
+    }, 500);
+  }
+});
 
-  document.addEventListener("mouseout", function (e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.remove("_over");
-    }
-  });
+/* Modal */
+const modalOpen = document.querySelectorAll(".modal-open");
+const modalOverlay = document.querySelector(".modal__overlay");
+const modal = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal__close");
 
-  document.addEventListener("mousedown", function (e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.add("click");
-      cursor.classList.remove("_over");
-      setTimeout(function () {
-        cursor.classList.remove("click");
-        cursor.classList.add("_over");
-      }, 500);
-    }
+function openModal() {
+  modalOverlay.style.display = "block";
+  modal.style.display = "block";
+  document.body.classList.add("modal-open"); // Добавляем класс к body
+}
+
+function closeModal() {
+  modalOverlay.style.display = "none";
+  modal.style.display = "none";
+  document.body.classList.remove("modal-open"); // Удаляем класс у body
+}
+
+modalOpen.forEach(function(item) {
+  item.addEventListener("click", function(event) {
+    event.preventDefault(); // Отменяем стандартное действие при клике на ссылку
+    openModal();
   });
+});
+
+modalClose.addEventListener("click", closeModal);
+
+modalOverlay.addEventListener("click", closeModal);
+
+//  Плавный скролл по якорям
+
+document.querySelectorAll("a.scroll").forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
+
+AOS.init({
+  offset: 120,
+  duration: 800
+});
+
+window.addEventListener("load", function() {
+  AOS.refresh();
+});
+
+document.addEventListener("scroll", function() {
+  AOS.refreshHard();
+});
