@@ -1,42 +1,3 @@
-//form
-
-const forms = document.querySelectorAll(".form__element");
-const inputMask = new Inputmask("+7 (999) 999-99-99");
-
-forms.forEach(form => {
-  const telSelector = form.querySelector('input[type="tel"]');
-
-  inputMask.mask(telSelector);
-
-  new window.JustValidate(".form__element", {
-    rules: {
-      tel: {
-        required: true,
-        function: () => {
-          const phone = telSelector.inputmask.unmaskedvalue();
-          return Number(phone) && phone.length === 10;
-        }
-      }
-    },
-    submitHandler: function(thisForm) {
-      let formData = new FormData(thisForm);
-      let xhr = new XMLHttpRequest();
-
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            console.log("Отправлено");
-          }
-        }
-      };
-      xhr.open("POST", "mail.php", true);
-      xhr.send(formData);
-
-      thisForm.reset();
-    }
-  });
-});
-
 // slider
 const swiper = new Swiper(".swiper", {
   slidesPerView: 3,
@@ -250,83 +211,6 @@ window.onscroll = function() {
   }
 };
 
-// == Custom cursor ==========--
-// const cursor = document.querySelector(".coursor");
-
-// document.addEventListener("mousemove", function(e) {
-//   cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-// });
-
-// document.addEventListener("mouseover", function(e) {
-//   if (e.target.closest("button, a")) {
-//     cursor.classList.add("_over");
-//   }
-// });
-
-// document.addEventListener("mouseout", function(e) {
-//   if (e.target.closest("button, a")) {
-//     cursor.classList.remove("_over");
-//   }
-// });
-
-// document.addEventListener("mousedown", function(e) {
-//   if (e.target.closest("button, a")) {
-//     cursor.classList.add("click");
-//     cursor.classList.remove("_over");
-//     setTimeout(function() {
-//       cursor.classList.remove("click");
-//       cursor.classList.add("_over");
-//     }, 500);
-//   }
-// });
-
-// const cursor = document.querySelector(".coursor");
-// let cursorSize = 20;
-
-// document.addEventListener("mousemove", function(e) {
-//   // Если курсор над элементом типа "button" или "a", то увеличиваем его размер на 10px
-//   if (e.target.closest("button, a")) {
-//     cursor.style.width = (cursorSize + 10) + "px";
-//     cursor.style.height = (cursorSize + 10) + "px";
-//   } else {
-//     cursor.style.width = cursorSize + "px";
-//     cursor.style.height = cursorSize + "px";
-//   }
-
-//   cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-// });
-
-// document.addEventListener("mouseleave", function(e) {
-//   if (e.target.closest("button, a")) {
-//     cursorSize -= 10;
-//   }
-
-//   cursor.style.width = cursorSize + "px";
-//   cursor.style.height = cursorSize + "px";
-// });
-
-// document.addEventListener("mousedown", function(e) {
-//   if (e.target.closest("button, a")) {
-//     cursor.classList.add("click");
-//     cursor.classList.remove("_over");
-
-//     // Увеличиваем размер курсора на 10px при клике
-//     cursorSize += 10;
-//     cursor.style.width = cursorSize + "px";
-//     cursor.style.height = cursorSize + "px";
-
-//     setTimeout(function() {
-//       cursor.classList.remove("click");
-//       cursor.classList.add("_over");
-
-//       // Возвращаем размер курсора к начальному значению после клика
-//       cursorSize -= 10;
-//       cursor.style.width = cursorSize + "px";
-//       cursor.style.height = cursorSize + "px";
-//     }, 500);
-//   }
-// });
-
 const cursor = document.querySelector(".cursor");
 
 document.addEventListener("mousemove", function(e) {
@@ -358,18 +242,15 @@ document.addEventListener("mousedown", function(e) {
 
 /* Modal */
 // const modalOpen = document.querySelectorAll(".modal-open");
-// const modalOverlay = document.querySelector(".modal__overlay");
 // const modal = document.querySelector(".modal");
 // const modalClose = document.querySelector(".modal__close");
 
 // function openModal() {
-//   modalOverlay.style.display = "block";
 //   modal.style.display = "block";
 //   document.body.classList.add("modal-open"); // Добавляем класс к body
 // }
 
 // function closeModal() {
-//   modalOverlay.style.display = "none";
 //   modal.style.display = "none";
 //   document.body.classList.remove("modal-open"); // Удаляем класс у body
 // }
@@ -382,7 +263,7 @@ document.addEventListener("mousedown", function(e) {
 // });
 
 // modalClose.addEventListener("click", closeModal);
-// modalOverlay.addEventListener("click", closeModal);
+
 
 // // ===============================================================================
 // // ======================    MODAL OFFER    ======================================
@@ -523,7 +404,6 @@ document.addEventListener("mousedown", function(e) {
 //   const closeModalCall = document.querySelector(".modal__call-close");
 //   const modal = document.querySelector(".modal__call-wrapper");
 
-
 //   function openModal() {
 //     modal.style.display = "block";
 //   }
@@ -590,82 +470,80 @@ document.addEventListener("mousedown", function(e) {
 // }
 // modalThanks();
 
-class Modal {
-  constructor(openBtns, closeBtns, modalWrapper) {
-    this.openBtns = document.querySelectorAll(openBtns);
-    this.closeBtns = document.querySelectorAll(closeBtns);
-    this.modalWrapper = document.querySelector(modalWrapper);
+// class Modal {
+//   constructor(openBtns, closeBtns, modalWrapper) {
+//     this.openBtns = document.querySelectorAll(openBtns);
+//     this.closeBtns = document.querySelectorAll(closeBtns);
+//     this.modalWrapper = document.querySelector(modalWrapper);
 
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.closeModalOnEscape = this.closeModalOnEscape.bind(this);
-    this.closeModalOnOutsideClick = this.closeModalOnOutsideClick.bind(this);
+//     this.openModal = this.openModal.bind(this);
+//     this.closeModal = this.closeModal.bind(this);
+//     this.closeModalOnEscape = this.closeModalOnEscape.bind(this);
+//     this.closeModalOnOutsideClick = this.closeModalOnOutsideClick.bind(this);
 
-    this.init();
-  }
+//     this.init();
+//   }
 
-  init() {
-    this.openBtns.forEach(button => {
-      button.addEventListener("click", this.openModal);
-    });
+//   init() {
+//     this.openBtns.forEach(button => {
+//       button.addEventListener("click", this.openModal);
+//     });
 
-    this.closeBtns.forEach(button => {
-      button.addEventListener("click", this.closeModal);
-    });
-  }
+//     this.closeBtns.forEach(button => {
+//       button.addEventListener("click", this.closeModal);
+//     });
+//   }
 
-  openModal() {
-    this.modalWrapper.style.display = "block";
-    document.addEventListener("keydown", this.closeModalOnEscape);
-    this.modalWrapper.addEventListener("click", this.closeModalOnOutsideClick);
-  }
+//   openModal() {
+//     this.modalWrapper.style.display = "block";
+//     document.addEventListener("keydown", this.closeModalOnEscape);
+//     this.modalWrapper.addEventListener("click", this.closeModalOnOutsideClick);
+//   }
 
-  closeModal(event) {
-    event.preventDefault(); // Prevent default behavior
-    this.modalWrapper.style.display = "none";
-    document.removeEventListener("keydown", this.closeModalOnEscape);
-    this.modalWrapper.removeEventListener(
-      "click",
-      this.closeModalOnOutsideClick
-    );
-  }
+//   closeModal(event) {
+//     event.preventDefault(); // Prevent default behavior
+//     this.modalWrapper.style.display = "none";
+//     document.removeEventListener("keydown", this.closeModalOnEscape);
+//     this.modalWrapper.removeEventListener(
+//       "click",
+//       this.closeModalOnOutsideClick
+//     );
+//   }
 
-  closeModalOnEscape(event) {
-    if (event.key === "Escape") {
-      this.closeModal(event);
-    }
-  }
+//   closeModalOnEscape(event) {
+//     if (event.key === "Escape") {
+//       this.closeModal(event);
+//     }
+//   }
 
-  closeModalOnOutsideClick(event) {
-    if (!event.target.closest(".modal")) {
-      this.closeModal(event);
-    }
-  }
-}
+//   closeModalOnOutsideClick(event) {
+//     if (!event.target.closest(".modal")) {
+//       this.closeModal(event);
+//     }
+//   }
+// }
 
-const modalOffer = new Modal(".button__offer", ".offer__link", ".offer");
-const modalAdditional = new Modal(
-  ".additional__link",
-  ".modal__additional-closest",
-  ".modal__additional-wrapper"
-);
-const modalAdapter = new Modal(
-  ".adapter__left-scheme",
-  ".modal__adapter-close",
-  ".modal__adapter-wrap"
-);
-const modalCall = new Modal(
-  ".header__button",
-  ".modal__call-close",
-  ".modal__call-wrapper"
-);
-const modalThanks = new Modal(
-  ".purchase__button",
-  ".thanks__close",
-  ".modal__thanks-wrapper"
-);
-
-
+// const modalOffer = new Modal(".button__offer", ".offer__link", ".offer");
+// const modalAdditional = new Modal(
+//   ".additional__link",
+//   ".modal__additional-closest",
+//   ".modal__additional-wrapper"
+// );
+// const modalAdapter = new Modal(
+//   ".adapter__left-scheme",
+//   ".modal__adapter-close",
+//   ".modal__adapter-wrap"
+// );
+// const modalCall = new Modal(
+//   ".header__button",
+//   ".modal__call-close",
+//   ".modal__call-wrapper"
+// );
+// const modalThanks = new Modal(
+//   ".purchase__button",
+//   ".thanks__close",
+//   ".modal__thanks-wrapper"
+// );
 
 // ==========================================================================
 // ====================   Плавный скролл по якорям  =========================
@@ -681,4 +559,229 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
   });
 });
 
+const formSite = () => {
+  const forms = document.querySelectorAll(".form__element");
+  const inputMask = new Inputmask("+7 (999) 999-99-99");
 
+  forms.forEach(form => {
+    const telSelector = form.querySelector('input[type="tel"]');
+
+    inputMask.mask(telSelector);
+
+    new window.JustValidate(".form__element", {
+      rules: {
+        tel: {
+          required: true,
+          function: () => {
+            const phone = telSelector.inputmask.unmaskedvalue();
+            return Number(phone) && phone.length === 10;
+          }
+        }
+      },
+      submitHandler: function(thisForm) {
+        let formData = new FormData(thisForm);
+        let xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log("Отправлено");
+            }
+          }
+        };
+        xhr.open("POST", "mail.php", true);
+        xhr.send(formData);
+
+        thisForm.reset();
+      }
+    });
+  });
+};
+
+formSite();
+
+// const formSite = () => {
+//   const forms = document.querySelectorAll(".form__element");
+
+//   forms.forEach(form => {
+//     const inputMask = new Inputmask("+7 (999) 999-99-99");
+//     const telSelector = form.querySelector(".tel-input");
+//     inputMask.mask(telSelector);
+
+//     new window.JustValidate(`#${form.id}`, {
+//       rules: {
+//         tel: {
+//           required: true,
+//           function: () => {
+//             const phone = telSelector.inputmask.unmaskedvalue();
+//             return Number(phone) && phone.length === 10;
+//           }
+//         }
+//       },
+//       submitHandler: function(thisForm) {
+//         let formData = new FormData(thisForm);
+//         let xhr = new XMLHttpRequest();
+
+//         xhr.onreadystatechange = function() {
+//           if (xhr.readyState === 4) {
+//             if (xhr.status === 200) {
+//               console.log("Отправлено");
+//             }
+//           }
+//         };
+//         xhr.open("POST", "mail.php", true);
+//         xhr.send(formData);
+
+//         thisForm.reset();
+//       }
+//     });
+//   });
+// };
+
+// formSite();
+
+// class Modal {
+//   constructor(openBtns, closeBtns, modalWrapper) {
+//     this.openBtns = document.querySelectorAll(openBtns);
+//     this.closeBtns = document.querySelectorAll(closeBtns);
+//     this.modalWrapper = document.querySelector(modalWrapper);
+
+//     this.openModal = this.openModal.bind(this);
+//     this.closeModal = this.closeModal.bind(this);
+//     this.closeModalOnEscape = this.closeModalOnEscape.bind(this);
+//     this.closeModalOnOutsideClick = this.closeModalOnOutsideClick.bind(this);
+
+//     this.init();
+//   }
+
+//   init() {
+//     this.openBtns.forEach(button => {
+//       button.addEventListener("click", () => {
+//         const form = document.querySelector(".form__element"); // выберите нужную форму
+//         if (form.checkValidity()) {
+//           // проверка на заполненность формы
+//           this.openModal();
+//         }
+//       });
+//     });
+
+//     this.closeBtns.forEach(button => {
+//       button.addEventListener("click", this.closeModal);
+//     });
+//   }
+
+//   openModal() {
+//     this.modalWrapper.style.display = "block";
+//     document.addEventListener("keydown", this.closeModalOnEscape);
+//     this.modalWrapper.addEventListener("click", this.closeModalOnOutsideClick);
+//   }
+
+//   closeModal(event) {
+//     event.preventDefault(); // Prevent default behavior
+//     this.modalWrapper.style.display = "none";
+//     document.removeEventListener("keydown", this.closeModalOnEscape);
+//     this.modalWrapper.removeEventListener(
+//       "click",
+//       this.closeModalOnOutsideClick
+//     );
+//   }
+
+//   closeModalOnEscape(event) {
+//     if (event.key === "Escape") {
+//       this.closeModal(event);
+//     }
+//   }
+
+//   closeModalOnOutsideClick(event) {
+//     if (!event.target.closest(".modal")) {
+//       this.closeModal(event);
+//     }
+//   }
+// }
+
+// const modalOffer = new Modal(".button__offer", ".offer__link", ".offer");
+// const openModalAdditional = () => {
+//   const form = document.querySelector(".form__element"); // выберите нужную форму
+//   if (form.checkValidity()) {
+//     // проверка на заполненность формы
+//     modalAdditional.openModal();
+//   }
+// };
+// document
+//   .querySelector(".additional__link")
+//   .addEventListener("click", openModalAdditional);
+// const modalAdditional = new Modal(
+//   ".additional__link",
+//   ".modal__additional-closest",
+//   ".modal__additional-wrapper"
+// );
+// const modalAdapter = new Modal(
+//   ".adapter__left-scheme",
+//   ".modal__adapter-close",
+//   ".modal__adapter-wrap"
+// );
+// const modalCall = new Modal(
+//   ".header__button",
+//   ".modal__call-close",
+//   ".modal__call-wrapper"
+// );
+// const modalThanks = new Modal(
+//   ".purchase__button",
+//   ".thanks__close",
+//   ".modal__thanks-wrapper"
+// );
+
+const modals = () => {
+  function bindModal(triggerSelector, modalSelector, closeSelector) {
+    const trigger = document.querySelectorAll(triggerSelector);
+    const modal = document.querySelector(modalSelector);
+    const close = document.querySelectorAll(closeSelector);
+
+    trigger.forEach(item => {
+      item.addEventListener("click", e => {
+        if (e.target) {
+          e.preventDefault();
+        }
+
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      });
+    });
+    close.forEach(item => {
+      item.addEventListener("click", () => {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      });
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    });
+  }
+  const callBtn = document.querySelector(".header__button");
+  const callModal = document.querySelector(".modal__call-wrapper");
+  const callModalClose = document.querySelector(
+    ".modal__call-wrapper .popup-close"
+  );
+
+  bindModal(
+    ".header__button",
+    ".modal__call-wrapper",
+    ".modal__call-wrapper .popup-close"
+  );
+  bindModal(
+    ".additional__link",
+    ".modal__additional-wrapper",
+    ".modal__additional-wrapper .popup-close"
+  );
+  bindModal(".adapter__left-scheme", ".modal__adapter-wrap", ".modal__adapter-wrap .popup-close");
+  bindModal(".button__offer", ".offer", ".offer .popup-close");
+  bindModal(".purchase__button", ".modal__thanks-wrapper", ".modal__thanks-wrapper .popup-close");
+  bindModal(".certificate__one", ".modal", ".modal .popup-close");
+
+};
+
+modals();

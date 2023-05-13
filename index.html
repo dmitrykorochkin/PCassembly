@@ -207,6 +207,15 @@
               </picture>
               <div class="reg__name">Onlooker R5 Combo</div>
             </div>
+            <picture>
+              <source srcset="./img/hero/lines-bg.webp" type="image/webp" />
+              <img
+                class="hero__lines-img1"
+                loading="lazy"
+                src="./img/hero/lines-bg.png"
+                alt="Видеорегистратор"
+              />
+            </picture>
           </section>
           <div class="bg__element__300" data-aos="fade-in"></div>
           <div class="bg__element__1" data-aos="fade-in"></div>
@@ -404,6 +413,7 @@
                       type="image/png"
                     />
                     <img
+                    class="video__img"
                       loading="lazy"
                       src="./img/video/video.png"
                       alt="Видео"
@@ -580,7 +590,9 @@
               <img loading="lazy" src="./img/antenna/line.svg" alt="lines" />
             </div>
             <div class="antenna__bg">
-              <picture>
+
+            </div>
+                          <picture>
                 <source
                   loading="lazy"
                   srcset="./img/antenna/bg.webp"
@@ -592,13 +604,14 @@
                   type="image/png"
                 />
                 <img
+                  class="antenna__bg-line"
                   loading="lazy"
                   src="./img/antenna/bg.png"
                   alt="background"
                 />
               </picture>
-            </div>
           </section>
+          
           <div class="bg__element"></div>
 
           <!-- -------------------------camers ----------------------- -->
@@ -834,7 +847,7 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="camers__ignor-bg">
+            <div class="camers__ignor-bg">
           <picture>
             <source
               srcset="./img/camers/camers-ignor-bg.webp"
@@ -844,11 +857,22 @@
               srcset="./img/camers/camers-ignor-bg.png"
               type="image/png"
             />
-            <img src="./img/camers/camers-ignor-bg.png" alt="background" />
-          </picture> -->
+            <img class="camers__ignor-img" src="./img/camers/camers-ignor-bg.png" alt="background" />
+          </picture> 
+          </div>
+                     <picture>
+            <source
+              srcset="./img/camers/bg-line.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/camers/bg-line.png"
+              type="image/png"
+            />
+            <img class="camers__ignor-img-line" src="./img/camers/bg-line.png" alt="background" />
+          </picture> 
           </section>
 
-          <div class="bg__element-line"></div>
           <div class="bg__element__4" data-aos="fade-in"></div>
           <div class="bg__element__5" data-aos="fade-in"></div>
           <div class="bg__element__6" data-aos="fade-in"></div>
@@ -2933,7 +2957,7 @@
               <div class="form__click">
                 Закажите устройство с доставкой <span>в 1 клик</span>
               </div>
-              <form id="form1" action="#" method="POST" class="form__element">
+              <form  id="form1" action="#" method="POST" class="form__element">
                 <label for="name" class="form__label">
                   <div class="label__name">Ваше Фамилия и Имя*</div>
                   <input
@@ -2986,7 +3010,28 @@
                   alt="background"
                 />
               </picture>
+
             </div>
+
+                          <picture>
+                <source
+                  loading="lazy"
+                  srcset="./img/form/bg-line.webp"
+                  type="image/webp"
+                />
+                <source
+                  loading="lazy"
+                  srcset="./img/form/bg-line.png"
+                  type="image/png"
+                />
+                <img
+                  loading="lazy"
+                  class="form__img-line"
+                  src="./img/form/bg-line.png"
+                  alt="background"
+                />
+              </picture>
+
           </section>
           <div class="bg__element"></div>
 
@@ -4212,7 +4257,7 @@
                   </div>
                 </div>
 
-                <form id="form2" data-aos="fade-in" class="form__element">
+                <form action="#" method="POST" id="form2" class="form__element">
                   <label for="name">
                     <div class="label__name">Ваше Фамилия и Имя*</div>
                     <input
@@ -4221,12 +4266,18 @@
                       maxlength="20"
                       name="user-name"
                       id="name"
+                      required
                     />
                   </label>
 
-                  <label for="telephone">
+                  <label for="telephone2">
                     <div class="label__name">Ваш телефон*</div>
-                    <input name="user-tel" type="tel" placeholder=""
+                    <input
+                      id="telephone2"
+                      data-validate-field="tel"
+                      name="user-tel"
+                      type="tel"
+                      placeholder=""
                   /></label>
                   <div class="form__footer" data-aos="fade-in">
                     <div class="form__button-text">
@@ -8252,7 +8303,7 @@
                 <div class="form__click">
                   Закажите устройство с доставкой <span>в 1 клик</span>
                 </div>
-                <form class="form__element">
+                <form action="#" method="POST" id="form3" class="form__element">
                   <label for="name">
                     <div class="label__name">Ваше Фамилия и Имя*</div>
                     <input
@@ -8261,19 +8312,25 @@
                       maxlength="20"
                       name="user-name"
                       id="name2"
+                      required
                     />
                   </label>
 
-                  <label for="telephone">
+                  <label for="telephone3">
                     <div class="label__name">Ваш телефон*</div>
-                    <input type="tel" id="telephone2" placeholder=""
+                    <input
+                      required
+                      data-validate-field="tel"
+                      type="tel"
+                      id="telephone3"
+                      placeholder=""
                   /></label>
                   <div class="form__footer">
                     <div class="form__button-text">
                       Нажимая на кнопку, вы даете согласие на обработку
                       персональных данных
                     </div>
-                    <button class="button button__form">Заказать</button>
+                    <button type="submit" class="button button__form">Заказать</button>
                   </div>
                 </form>
               </div>
@@ -8440,8 +8497,9 @@
             </div>
             <div class="purchase__form">
               <form action="#" method="POST" class="form__element">
-                <label class="form__label" for="telephone"></label>
+                <label class="form__label" for="telephone4"></label>
                 <input
+                  id="telephone4"
                   name="user-phone"
                   data-validate-field="tel"
                   type="tel"
@@ -8727,7 +8785,7 @@
               <div class="offer__title">Ограниченное предложение</div>
               <a href="#" class="offer__link">
                 <img src="./img/offer/arrow.svg" alt="" class="offer__icon" />
-                <div class="offer__link-text">Вернуться к товару</div>
+                <div class="offer__link-text popup-close">Вернуться к товару</div>
               </a>
             </div>
             <div class="offer__title-bottom">
@@ -8858,19 +8916,24 @@
 
     <!-- MODAL DECLARATION  -->
 
-    <div class="modal__declaration modal__overlay"></div>
+    <div class="modal__declaration modal__overlay">
     <div class="modal">
       <div class="modal__content">
         <img src="img/modal/declaration/1-rus.jpeg" alt="certificate" />
-        <button class="modal__close"></button>
+        <button class="modal__close popup-close">
+          <img class="modal__close-img" src="./img/modal/additional/+.svg" alt="">
+        </button>
       </div>
+    </div>
     </div>
 
     <div class="modal__declaration modal__overlay"></div>
     <div class="modal">
       <div class="modal__content">
-        <img src="img/modal/declaration/2-rus.jpeg" alt="certificate" />
-        <button class="modal__close"></button>
+        <img class="modal__content-declaration" src="img/modal/declaration/2-rus.jpeg" alt="certificate" />
+        <button class="modal__close popup-close">
+          <img class="modal__close-img" src="./img/modal/additional/+.svg" alt="">
+        </button>
       </div>
     </div>
 
@@ -8878,7 +8941,9 @@
     <div class="modal">
       <div class="modal__content">
         <img src="img/modal/declaration/3-eng.jpeg" alt="certificate" />
-        <button class="modal__close"></button>
+        <button class="modal__close popup-close">
+          <img class="modal__close-img" src="./img/modal/additional/+.svg" alt="">
+        </button>
       </div>
     </div>
 
@@ -8913,14 +8978,14 @@
           </div>
         </div>
         <div class="modal__additional-buttons">
-          <button class="additional__button-close modal__additional-closest">
+          <button class="additional__button-close modal__additional-closest popup-close">
             Закрыть
           </button>
           <button class="button additional__button-modal">
             Добавить к заказу
           </button>
         </div>
-        <button class="modal__additional-close modal__additional-closest">
+        <button class="modal__additional-close modal__additional-closest popup-close">
           <img src="img/modal/additional/+.svg" alt="close" />
         </button>
       </div>
@@ -8964,7 +9029,7 @@
             />
           </picture>
         </div>
-        <button class="modal__adapter-close">
+        <button class="modal__adapter-close popup-close">
           <img src="./img/modal/additional/+.svg" alt="close" />
         </button>
       </div>
@@ -9087,16 +9152,21 @@
           </a>
         </div>
         <form class="form__element">
-          <label for="telephone">
+          <label for="telephone5">
             <div class="label__name">Ваш телефон*</div>
-            <input type="tel" id="telephone3" placeholder=""
+            <input
+              data-validate-field="tel"
+              required
+              type="tel"
+              id="telephone5"
+              placeholder=""
           /></label>
           <div class="form__footer">
             <div class="form__button-text">
               Нажимая на кнопку, вы даете согласие на обработку персональных
               данных
             </div>
-            <button class="button button__form">Заказать</button>
+            <button type="submit" class="button button__form">Заказать</button>
           </div>
         </form>
 
@@ -9111,7 +9181,7 @@
             />
           </picture>
         </div>
-        <button class="modal__call-close">
+        <button class="modal__call-close popup-close">
           <img src="./img/modal/additional/+.svg" alt="" />
         </button>
       </div>
@@ -9122,8 +9192,8 @@
         <div class="modal__thanks-title">
           Спасибо, мы скоро свяжемся с Вами!
         </div>
-        <button class="button button__thanks thanks__close">Ок</button>
-        <button class="modal__thanks-close thanks__close">
+        <button class="button button__thanks thanks__close popup-close">Ок</button>
+        <button class="modal__thanks-close thanks__close popup-close">
           <img src="./img/modal/additional/+.svg" alt="" />
         </button>
       </div>
