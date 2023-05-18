@@ -1,3 +1,5 @@
+AOS.init();
+
 // slider
 const swiper = new Swiper(".swiper", {
   slidesPerView: 1,
@@ -73,6 +75,10 @@ const imgBlock = document.querySelectorAll(".tabs__container");
 
 itemTop.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
+    itemTop.forEach(item => {
+      item.classList.remove("active-tab");
+    });
+    item.classList.add("active-tab");
     imgBlock.forEach(i => {
       i.classList.remove("active");
     });
@@ -87,6 +93,7 @@ const imgIntBlock = document.querySelectorAll(".interface__img");
 
 itemIntLeft.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
+    
     imgIntBlock.forEach(i => {
       i.classList.remove("active");
     });
@@ -101,6 +108,11 @@ const alertImgBlock = document.querySelectorAll(".alert__animation");
 
 alertTabs.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
+    alertTabs.forEach(item => {
+      item.classList.remove("active-tab");
+    });
+    item.classList.add("active-tab");
+
     alertImgBlock.forEach(item => {
       item.classList.remove("active");
     });
