@@ -1,67 +1,63 @@
-<?php
+<?php 
 
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
-$json = file_get_contents('php://input');
-$obj = json_decode($json, true);
+if (isset($_POST['phone'])) {
+    $name = isset($_POST['name']) ? $_POST['name'] : "";
+    $phone = $_POST['phone'];
 
-$name = $obj['user-name'];
-$phone = $obj['user-phone'];
+    if(empty($name) && empty($phone)) {
+        $result = "error";
+        $status = "Поля 'Имя' и 'Телефон' обязательны для заполнения";
+    } else {
+        $body = "<h2>Новое письмо</h2>";
+        if (!empty($name)) {
+            $body .= "<p><strong>Имя:</strong> {$name}</p>";
+        }
+        $body .= "<p><strong>Телефон:</strong> {$phone}</p>";
 
-//Формирование самого письма 
+        $body = "<table style='width: 100%;'>$body</table>";
 
-$title = "Заголовок письма";
+        $mail = new PHPMailer\PHPMailer\PHPMailer();
 
+        try {
+            $mail->isSMTP();
+            $mail->CharSet = "UTF-8";
+            $mail->SMTPAuth   = true;
+            $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
+          
+            $mail->Host       = 'smtp.mail.ru';
+            $mail->Username   = 'd_korochkin@inbox.ru';
+            $mail->Password   = 'gndgpS16Gga8hnpTNXAQ';
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port       = 465;
+          
+            $mail->setFrom('d_korochkin@inbox.ru', 'Dmitry Korochkin');
+          
+            $mail->addAddress('abramslost@gmail.com');
+            $mail->addAddress('kunica.prosto@yandex.ru');
+            $mail->addAddress('d_korochkin@inbox.ru');
+            $mail->addAddress('zakaz@on-looker.ru');
 
-$body = " <h2>Новое письмо</h2>
-  <tr style='background-color: #f8f8f8;'>
-    <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>Имя: </b>$name</td>
-    <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>Номер телефона: </b>$phone</td>
-  </tr>
-  ";
-$body = "<table style='width: 100%;'>$body</table>";
-
-//настройки PHP mailer and
-$mail = new PHPMailer\PHPMailer\PHPMailer(); 
-
-//Настройки вашей почты 
-
-
-try {
-    $mail->isSMTP();
-    $mail->CharSet = "UTF-8";
-    $mail->SMTPAuth   = true;
-    // $mail->SMTPDebug = 2; 
-    $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
-  
-    // Настройки вашей почты
-    $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-    $mail->Username   = 'abramslost@gmail.com'; // Логин на почте
-    $mail->Password   = 'ohskwfjqwzqrodlo'; // Пароль 
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port       = 465;
-  
-    $mail->setFrom('abramslost@gmail.com', 'Dmitry Korochkin'); // Адрес самой почты и имя отправителя
-  
-    // Получатель письма
-    $mail->addAddress('abramslost@gmail.com');
-    $mail->addAddress('kunica.prosto@yandex.ru');
-  
-    // Отправка сообщения
-    $mail->isHTML(true);
-    $mail->Subject = $title;
-    $mail->Body = $body;
-  
-  // Проверяем отравленность сообщения
-  if ($mail->send()) {$result = "success";} 
-  else {$result = "error";}
-  
-  } catch (Exception $e) {
+          
+            $mail->isHTML(true);
+            $mail->Subject = 'Заголовок письма';
+            $mail->Body = $body;
+            $result = $mail->send() ? "success" : "error";
+        } catch (Exception $e) {
+            $result = "error";
+            $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
+        }
+    }
+} else {
     $result = "error";
-    $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
-  }
-  
-  // Отображение результата
-  echo json_encode(["result" => $result, "status" => $status]);
+    $status = "Переменная 'phone' не найдена";
+}
+
+if (!isset($status)) {
+    $status = "";
+}
+
+echo json_encode(["result" => $result, "status" => $status]);

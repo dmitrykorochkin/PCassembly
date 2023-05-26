@@ -9,17 +9,36 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
     type: "bullets"
   },
-  // autoplay: {
-  //   delay: 3000
-  // },
-    breakpoints: {
-      768: {
-        slidesPerView: 3
-      }
+  autoplay: {
+    delay: 5000
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 3
+    }
   },
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+    prevEl: ".swiper-button-prev",
+    hideOnClick: true
+  }
+});
+
+const swiper2 = new Swiper("#swiper2", {
+  slidesPerView: 1,
+  spaceBetween: 70,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets"
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    hideOnClick: true
+  },
+  autoplay: {
+    delay: 5000
   }
 });
 
@@ -93,11 +112,28 @@ const imgIntBlock = document.querySelectorAll(".interface__img");
 
 itemIntLeft.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
-    
     imgIntBlock.forEach(i => {
       i.classList.remove("active");
     });
     imgIntBlock[index].classList.add("active");
+  });
+});
+
+//tabs slider
+
+const itemSlide = document.querySelectorAll(".item-slide");
+const slideBlock = document.querySelectorAll(".swiper");
+
+itemSlide.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    itemSlide.forEach(item => {
+      item.classList.remove("active-tab");
+    });
+    item.classList.add("active-tab");
+    slideBlock.forEach(i => {
+      i.classList.remove("active");
+    });
+    slideBlock[index].classList.add("active");
   });
 });
 
@@ -127,6 +163,10 @@ const sectionHover = document.querySelectorAll(".section__hover");
 
 itemHover.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
+    itemHover.forEach(item => {
+      item.classList.remove("active-tab");
+    });
+    item.classList.add("active-tab");
     sectionHover.forEach(item => {
       item.classList.remove("active");
     });
@@ -263,118 +303,126 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
   });
 });
 
-// const formSite = () => {
-//   const forms = document.querySelectorAll(".form__element");
-//   const inputMask = new Inputmask("+7 (999) 999-99-99");
+const formSite = () => {
+  const inputMask = new Inputmask("+7 (999) 999-99-99");
+  const forms = document.querySelectorAll(".form__element");
 
-//   forms.forEach(form => {
-//     const telSelector = form.querySelector('input[type="tel"]');
+  forms.forEach(form => {
+    const telSelector = form.querySelector('input[type="tel"]');
+    inputMask.mask(telSelector);
 
-//     inputMask.mask(telSelector);
+    new window.JustValidate(`#${form.id}`, {
+      rules: {
+        tel: {
+          required: true,
+          function: () => {
+            const phone = telSelector.inputmask.unmaskedvalue();
+            return Number(phone) && phone.length === 10;
+          }
+        }
+      },
+      submitHandler: async function(form) {
+        const formData = new FormData(form);
 
-//     new window.JustValidate(".form__element", {
-//       rules: {
-//         tel: {
-//           required: true,
-//           function: () => {
-//             const phone = telSelector.inputmask.unmaskedvalue();
-//             return Number(phone) && phone.length === 10;
-//           }
-//         }
-//       },
-//       submitHandler: function(thisForm) {
-//         let formData = new FormData(thisForm);
-//         let xhr = new XMLHttpRequest();
+        try {
+          const response = await fetch("mail.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData)
+          });
 
-//         xhr.onreadystatechange = function() {
-//           if (xhr.readyState === 4) {
-//             if (xhr.status === 200) {
-//               console.log("Отправлено");
-//             }
-//           }
-//         };
-//         xhr.open("POST", "mail.php", true);
-//         xhr.send(formData);
+          if (response.ok) {
+            console.log("Отправлено");
 
-//         thisForm.reset();
-//       }
-//     });
-//   });
-// };
+            // Отправка почты
+            const mailData = new FormData();
+            mailData.append("name", formData.get("name"));
+            mailData.append("phone", formData.get("phone"));
+            mailData.append("type", "mail");
 
-// formSite();
+            const mailResponse = await fetch("mail.php", {
+              method: "POST",
+              headers: { "Content-Type": "multipart/form-data" },
+              body: mailData
+            });
 
-const forms = () => {
-  const form = document.querySelectorAll(".form__element");
-  const input = document.querySelectorAll("input");
+            if (mailResponse.ok) {
+              console.log(await mailResponse.text());
+            }
+          } else {
+            console.error("Ошибка при отправке формы");
+          }
+        } catch (error) {
+          console.error(error);
+        }
 
-  const message = {
-    loading: "Загрузка...",
-    success: "Спасибо, с вами скоро свяжутся!",
-    failure: "Что-то пошло не так..."
-  };
-
-  const postData = async (url, data) => {
-    document.querySelector(".status").textContent = message.loading;
-    let res = await fetch(url, {
-      method: "POST",
-      body: data
-    });
-
-    return await res.text();
-  };
-
-  const clearInputs = () => {
-    input.forEach(item => {
-      item.value = "";
-    });
-  };
-
-  form.forEach(item => {
-    item.addEventListener("submit", e => {
-      e.preventDefault();
-
-      let statusMessage = document.createElement("div");
-      statusMessage.classList.add("status");
-      item.appendChild(statusMessage);
-
-      const formData = new FormData(item);
-      postData("../server.php", formData)
-        .then(res => {
-          console.log(res);
-          statusMessage.textContent = message.success;
-          debugger;
-        })
-        .catch(() => (statusMessage.textContent = message.failure))
-        .finally(() => {
-          clearInputs();
-          setTimeout(() => {
-            statusMessage.remove();
-          }, 5000);
-        });
+        form.reset();
+      }
     });
   });
 };
-forms();
+
+formSite();
+
+const lastForm = () => {
+  const lastForms = document.querySelector(".purchase__button");
+  const forms = document.querySelectorAll("#form4");
+
+  lastForms.addEventListener("click", () => {
+    // Получим данные формы
+    const formData = new FormData(forms[0]);
+
+    // Отправим данные на сервер через AJAX запрос
+    fetch(forms[0].action, {
+      method: "POST",
+      body: formData
+    })
+      .then(response => {
+        if (response.ok) {
+          // Показываем модальное окно с сообщением об успехе
+          const modalThanksWrapper = document.querySelector(
+            ".modal__thanks-wrapper"
+          );
+          modalThanksWrapper.style.display = "block";
+        }
+      })
+      .catch(error => {
+        // Показываем модальное окно с сообщением об ошибке
+        console.log("Ошибка при отправке формы");
+      });
+  });
+
+  // Найдем кнопку закрытия модального окна
+  const closeButtons = document.querySelectorAll(".thanks__close");
+  Array.from(closeButtons).forEach(button => {
+    button.addEventListener("click", () => {
+      const modalThanksWrapper = document.querySelector(
+        ".modal__thanks-wrapper"
+      );
+      modalThanksWrapper.style.display = "none";
+    });
+  });
+};
+
+lastForm();
 
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
     const trigger = document.querySelectorAll(triggerSelector);
     const modal = document.querySelector(modalSelector);
-    const close = document.querySelectorAll(closeSelector);
+    const close = modal.querySelectorAll(closeSelector);
 
     trigger.forEach(item => {
       item.addEventListener("click", e => {
-        if (e.target) {
-          e.preventDefault();
-        }
-
+        e.preventDefault();
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
       });
     });
+
     close.forEach(item => {
-      item.addEventListener("click", () => {
+      item.addEventListener("click", e => {
+        e.preventDefault();
         modal.style.display = "none";
         document.body.style.overflow = "";
       });
@@ -387,6 +435,7 @@ const modals = () => {
       }
     });
   }
+
   const callBtn = document.querySelector(".header__button");
   const callModal = document.querySelector(".modal__call-wrapper");
   const callModalClose = document.querySelector(
@@ -408,13 +457,202 @@ const modals = () => {
     ".modal__adapter-wrap",
     ".modal__adapter-wrap .popup-close"
   );
-  bindModal(".button__offer", ".offer", ".offer .popup-close");
-  bindModal(
-    ".purchase__button",
-    ".modal__thanks-wrapper",
-    ".modal__thanks-wrapper .popup-close"
-  );
+  bindModal(".cartreader__button", ".offer", ".offer .popup-close");
+  bindModal(".adapter__button", ".offer", ".offer .popup-close");
   bindModal(".certificate__one", ".modal", ".modal .popup-close");
+  bindModal(".promotion__button", ".offer", ".offer .popup-close");
+  bindModal(".button__hero", ".offer", ".offer .popup-close");
+  bindModal(".additional__button", ".offer", ".offer .popup-close");
+  bindModal(".button__video ", ".offer", ".offer .popup-close");
+  bindModal(
+    ".review360__button",
+    ".modal__360",
+    ".modal__360 .modal__360-close"
+  );
 };
 
 modals();
+
+const modalPromotion = () => {
+  const buttonProm = document.querySelectorAll(".offer__wrap-link");
+  const modalsProm = document.querySelectorAll(".modal__promotion-one");
+
+  const openModal = modal => {
+    console.log("Открытие модального окна");
+    modal.style.display = "block";
+    document.addEventListener("keydown", closeModalOnESC);
+  };
+
+  const closeModal = modal => {
+    console.log("Закрытие модального окна");
+    modal.style.display = "none";
+    document.removeEventListener("keydown", closeModalOnESC);
+  };
+
+  const closeModalOnESC = event => {
+    if (event.keyCode === 27) {
+      const openModal = document.querySelector(
+        '.modal__promotion-one[style*="display: block"]'
+      );
+      closeModal(openModal);
+    }
+  };
+
+document.addEventListener("click", event => {
+  const target = event.target;
+
+  // Проверяем, был ли клик на кнопке открытия модального окна
+  for (let i = 0; i < buttonProm.length; i++) {
+    if (target === buttonProm[i]) {
+      event.preventDefault();
+      openModal(modalsProm[i]);
+      return;
+    }
+  }
+
+  // Проверяем, был ли клик на кнопке закрытия модального окна
+  if (target.classList.contains("button__promotion-close")) {
+    console.log("Клик на кнопке закрытия модального окна");
+    const modal = target.closest(".modal__promotion-one");
+    closeModal(modal);
+    console.log("Функция closeModal выполнена");
+  }
+
+  // Проверяем, был ли клик вне модального окна
+  for (let i = 0; i < modalsProm.length; i++) {
+    if (target === modalsProm[i]) {
+      closeModal(target);
+      return;
+    }
+  }
+});
+};
+
+
+modalPromotion();
+
+// комплектующие
+
+const itemsComplect = document.querySelectorAll(".equipment__item");
+const itemImg = document.querySelectorAll(".img__equipment");
+const itemImgBlock = document.querySelectorAll(".img__equipment-block");
+
+itemsComplect.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    itemImg[index].style.display = "none";
+    itemImgBlock[index].style.display = "block";
+  });
+
+  item.addEventListener("mouseout", () => {
+    itemImg[index].style.display = "block";
+    itemImgBlock[index].style.display = "none";
+  });
+});
+
+// ************************  АНИМАЦИЯ *****************************
+
+let index = 0;
+// Функция, вызываемая при появлении элемента в области видимости
+const handleIntersection = (entries, observer) => {
+  const items = document.querySelectorAll(".tabs__item");
+  const images = document.querySelectorAll(".tabs__container");
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      items.forEach(item => item.classList.remove("active-tab"));
+
+      items[index].classList.add("active-tab");
+
+      images.forEach(image => image.classList.remove("active"));
+
+      images[index].classList.add("active");
+    } else {
+      items.forEach(function(item, i) {
+        if (item.classList.contains("active-tab")) {
+          index = i;
+        }
+      });
+
+      items.forEach(item => item.classList.remove("active-tab"));
+      images.forEach(image => image.classList.remove("active"));
+    }
+  });
+};
+
+// Создаем экземпляр Observer
+const observer = new IntersectionObserver(handleIntersection);
+
+// Элемент, который мы хотим отслеживать
+const targetElement = document.querySelector("#mode");
+
+// Начинаем отслеживать элемент
+observer.observe(targetElement);
+
+// *******************************************************************************************
+
+const alertAnimation = () => {
+  // Функция, вызываемая при появлении элемента в области видимости
+  const handleIntersection = (entries, observer) => {
+    const items = document.querySelectorAll(".alert__tab");
+    const images = document.querySelectorAll(".alert__animation");
+
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        items.forEach(item => item.classList.remove("active-tab"));
+
+        items[index].classList.add("active-tab");
+
+        images.forEach(image => image.classList.remove("active"));
+
+        images[index].classList.add("active");
+      } else {
+        items.forEach(function(item, i) {
+          if (item.classList.contains("active-tab")) {
+            index = i;
+          }
+        });
+
+        items.forEach(item => item.classList.remove("active-tab"));
+        images.forEach(image => image.classList.remove("active"));
+      }
+    });
+  };
+
+  // Создаем экземпляр Observer
+  const observer = new IntersectionObserver(handleIntersection);
+
+  // Элемент, который мы хотим отслеживать
+  const targetElement = document.querySelector("#alert");
+
+  // Начинаем отслеживать элемент
+  observer.observe(targetElement);
+};
+alertAnimation();
+
+//*******************************  Анимация машинок и аварии *********************************
+
+const protections = document.querySelectorAll(
+  ".protection__defender, .protection__bang-img, .protection__sign-img"
+);
+
+const handleProtection = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log("protection is visible");
+      document
+        .querySelector(".protection__cars")
+        .classList.add("custom-active");
+    } else {
+      console.log("protection is not visible");
+      document
+        .querySelector(".protection__cars")
+        .classList.remove("custom-active");
+    }
+  });
+};
+
+const observerProtection = new IntersectionObserver(handleProtection);
+
+const protection = document.querySelector("#protection");
+
+observerProtection.observe(protection);
