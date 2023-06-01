@@ -44,6 +44,32 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
+
+
+if (window.innerWidth <= 767) {
+  const swiper3 = new Swiper("#swiper3", {
+    slidesPerView: 1,
+    spaceBetween: 70,
+    loop: false,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets"
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+      hideOnClick: true
+    },
+    autoplay: {
+      delay: 5000
+    }
+  });
+}
+
+
+
+
+
     //  Slider 360
 
 const slider = document.querySelector(".modal__360-wrap");
@@ -267,21 +293,31 @@ showSlide(currentIndex);
 
   // бургер меню
 
-  const navbarMenu = document.querySelector(".navbar");
-  const buttonBurger = document.querySelector(".header__burger");
-  const buttonBurgerClose = document.querySelector(".header__burger-close");
+const navbarMenu = document.querySelector(".navbar");
+const buttonBurger = document.querySelector(".header__burger");
+const buttonBurgerClose = document.querySelector(".header__burger-close");
+const menuLinks = document.querySelectorAll(".menu__list a");
 
-  buttonBurger.addEventListener("click", () => {
-    navbarMenu.classList.add("navbar__visible");
-    buttonBurger.style.display = "none";
-    buttonBurgerClose.style.display = "block";
-  });
+buttonBurger.addEventListener("click", () => {
+  navbarMenu.classList.add("navbar__visible");
+  buttonBurger.style.display = "none";
+  buttonBurgerClose.style.display = "block";
+});
 
-  buttonBurgerClose.addEventListener("click", () => {
+buttonBurgerClose.addEventListener("click", () => {
+  navbarMenu.classList.remove("navbar__visible");
+  buttonBurger.style.display = "block";
+  buttonBurgerClose.style.display = "none";
+});
+
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
     navbarMenu.classList.remove("navbar__visible");
     buttonBurger.style.display = "block";
     buttonBurgerClose.style.display = "none";
   });
+});
+
 
   // загрузка страниц при скролле
 
@@ -330,35 +366,40 @@ showSlide(currentIndex);
     }
   };
 
-  const cursor = document.querySelector(".cursor");
+const cursor = document.querySelector(".cursor");
 
-  document.addEventListener("mousemove", function(e) {
-    cursor.style.cssText =
-      "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-  });
+document.addEventListener("mousemove", function(e) {
+  cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+});
 
-  document.addEventListener("mouseover", function(e) {
-    if (e.target.closest("button, a")) {
+document.addEventListener("mouseover", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("_over");
+  }
+});
+
+document.addEventListener("mouseout", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.remove("_over");
+    cursor.style.display = "none"; // добавили скрытие курсора
+  }
+});
+
+document.addEventListener("mousedown", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("click");
+    cursor.classList.remove("_over");
+    setTimeout(function() {
+      cursor.classList.remove("click");
       cursor.classList.add("_over");
-    }
-  });
+    }, 500);
+  }
+});
 
-  document.addEventListener("mouseout", function(e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.remove("_over");
-    }
-  });
+document.addEventListener("mouseenter", function(e) {
+  cursor.style.display = "block"; // добавили отображение курсора
+});
 
-  document.addEventListener("mousedown", function(e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.add("click");
-      cursor.classList.remove("_over");
-      setTimeout(function() {
-        cursor.classList.remove("click");
-        cursor.classList.add("_over");
-      }, 500);
-    }
-  });
 
   // ==========================================================================
   // ====================   Плавный скролл по якорям  =========================
@@ -533,7 +574,9 @@ showSlide(currentIndex);
     bindModal(".certificate__one", ".modal", ".modal .popup-close");
     bindModal(".promotion__button", ".offer", ".offer .popup-close");
     bindModal(".button__hero", ".offer", ".offer .popup-close");
+    bindModal(".memory__button", ".offer", ".offer .popup-close");
     bindModal(".additional__button", ".offer", ".offer .popup-close");
+    bindModal(".step__button", ".offer", ".offer .popup-close");
     bindModal(".button__video ", ".offer", ".offer .popup-close");
     bindModal(
       ".review360__button",
