@@ -14723,8 +14723,8 @@ input:checked + .slider:before {
 }
 
 .dzen {
-  width: 5.2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 1.5rem;
   fill: #4c4c4c;
   position: absolute;
   top: 50%;
@@ -14756,8 +14756,8 @@ input:checked + .slider:before {
 
 .footer__icons-item {
   position: relative;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border: 0.1rem solid #4c4c4c;
   border-radius: 8rem;
   -webkit-transition: 0.3s ease;
